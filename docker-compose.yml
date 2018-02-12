@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    container_name: hungry_app
+    build: ./
+    depends_on:
+      - hungry_db
+    ports:
+      - "3000:3000"
+    volumes:
+      - hungry_sync:/app
+
+  hungry_db:
+    container_name: hungry_db
+    image: mysql
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    env_file:
+      - ./development.env
+
+volumes: # Sync to local and docker container
+  hungry_sync:
+    external: true

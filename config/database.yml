@@ -6,8 +6,10 @@
 #
 default: &default
   adapter: mysql2
+  host: hungry_db
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: hungry_researcher
   password: password
 
 development:

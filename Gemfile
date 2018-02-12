@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'cancancan'
 gem 'devise'
 gem 'babel-transpiler'
+gem 'annotate'
 
 group :development, :test do
   gem 'pry-byebug'

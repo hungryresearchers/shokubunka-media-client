@@ -1,6 +1,4 @@
-# Project Title
-
-One Paragraph of project description goes here
+# 食文化研究会 メディアプロジェクト
 
 ## Getting Started
 
@@ -18,7 +16,4 @@ gem install docker-sync
 docker-sync-stack start
 ```
 
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+4. Access to http://0.0.0.0:3000

@@ -20,6 +20,7 @@
 
 /node_modules
 /yarn-error.log
+Gemfile.losck
 
 .byebug_history
 .idea

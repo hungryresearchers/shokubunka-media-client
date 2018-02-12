@@ -1,24 +1,24 @@
-# README
+# Project Title
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+One Paragraph of project description goes here
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+1. Install [Docker for Mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-* System dependencies
+2. Next, you need to install docker-sync
 
-* Configuration
+```
+gem install docker-sync
+```
 
-* Database creation
+3. Next, running server
 
-* Database initialization
+```
+docker-sync-stack start
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
-
-* ...
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used

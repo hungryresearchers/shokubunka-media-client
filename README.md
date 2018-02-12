@@ -1,24 +1,19 @@
-# README
+# 食文化研究会 メディアプロジェクト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+1. Install [Docker for Mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-* Ruby version
+2. Next, you need to install docker-sync
 
-* System dependencies
+```
+gem install docker-sync
+```
 
-* Configuration
+3. Next, running server
 
-* Database creation
+```
+docker-sync-stack start
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Access to http://0.0.0.0:3000

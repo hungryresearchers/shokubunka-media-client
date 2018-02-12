@@ -18,9 +18,13 @@ gem 'cancancan'
 gem 'devise'
 gem 'babel-transpiler'
 gem 'annotate'
+gem 'activeadmin'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end

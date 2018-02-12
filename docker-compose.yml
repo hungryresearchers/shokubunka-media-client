@@ -3,6 +3,7 @@ services:
   app:
     container_name: hungry_app
     build: ./
+    entrypoint: bin/entry
     depends_on:
       - hungry_db
     ports:

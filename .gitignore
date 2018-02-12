@@ -20,7 +20,7 @@
 
 /node_modules
 /yarn-error.log
-Gemfile.losck
+Gemfile.lock
 
 .byebug_history
 .idea

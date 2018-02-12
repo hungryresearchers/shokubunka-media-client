@@ -10,8 +10,5 @@ RUN bundle install
 
 COPY . /app
 WORKDIR /app
-RUN rm -f /tmp/pids/server.pid
-
-CMD ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
 
 #CMD ["tail", "-f", "/dev/null"]

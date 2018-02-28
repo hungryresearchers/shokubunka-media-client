@@ -10,6 +10,8 @@ services:
       - "3000:3000"
     volumes:
       - hungry_sync:/app
+    env_file:
+      - ./development.env
 
   hungry_db:
     container_name: hungry_db

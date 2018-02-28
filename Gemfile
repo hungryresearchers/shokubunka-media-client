@@ -19,6 +19,8 @@ gem 'devise'
 gem 'babel-transpiler'
 gem 'annotate'
 gem 'activeadmin'
+gem 'draper'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'

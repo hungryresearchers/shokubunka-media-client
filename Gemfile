@@ -15,10 +15,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'cancancan'
+gem 'slim-rails'
 gem 'devise'
 gem 'babel-transpiler'
 gem 'annotate'
 gem 'activeadmin'
+gem 'draper'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'

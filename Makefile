@@ -5,7 +5,7 @@ start-app:
 	docker run --service-ports app
 clean:
 	docker stop $$(docker ps -a -q)
-	docker volume prune
+	docker volume prune -f
 build:
 	docker-compose build
 rebuild:

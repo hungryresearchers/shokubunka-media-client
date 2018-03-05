@@ -17,3 +17,49 @@ docker-sync-stack start
 ```
 
 4. Access to http://0.0.0.0:3000
+
+
+## Make command
+
+### Server start with docker-sync
+
+```
+make start
+```
+
+
+### Server start with app-log
+
+```
+make start-app
+```
+
+### Build app
+
+```
+make build
+```
+
+### ReBuild app at no cache
+
+```
+make rebuild
+```
+
+### Clean container and rebuild
+
+```
+make clean-build
+```
+
+### Enter the app container
+
+```
+make enter-app
+```
+
+### Enter the db container
+
+```
+make enter-db
+```

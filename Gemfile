@@ -10,6 +10,7 @@ gem 'turbolinks', '~> 5'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'bootstrap-sass'
+gem 'slim-rails'
 
 gem 'font-awesome-rails'
 # Use Capistrano for deployment

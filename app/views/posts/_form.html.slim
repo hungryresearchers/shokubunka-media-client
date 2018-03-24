@@ -3,6 +3,11 @@
   = f.input :title
   = f.input :author
   = f.input :article, as: :text
+  = f.input :shop_tel, as: :integer
+  = f.input :price_min,as: :integer
+  = f.input :price_max,as: :integer
+  = f.input :shop_locate_url
+  = f.input :business_hours
   = f.input 'submit', label: false do
     = f.submit "登録", class: 'btn btn-primary'
     = link_to "キャンセル", posts_path(nonclear: true), class: 'btn btn-default'

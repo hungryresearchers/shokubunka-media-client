@@ -1,0 +1,9 @@
+= simple_form_for(@post, html: { class: 'form-horizontal' }) do |f|
+
+  = f.input :title
+  = f.input :author
+  = f.input :article, as: :text
+  = f.input 'submit', label: false do
+    = f.submit "登録", class: 'btn btn-primary'
+    = link_to "キャンセル", posts_path(nonclear: true), class: 'btn btn-default'
+ls

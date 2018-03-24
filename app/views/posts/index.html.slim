@@ -1,0 +1,28 @@
+.row
+  .col-lg-12
+    h2 記事一覧
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .ibox
+        .ibox-content
+          .text-right
+            = link_to "投稿を新規に作成", new_post_path, class: 'btn btn-info btn-md'
+          .table-responsive
+            table.table.table-striped.table-hover.text-nowrap
+              thead
+                tr
+                  th タイトル
+                  th 記事
+                  th
+                  th
+                  th
+              tbody
+                - @posts.each do |post|
+                  tr
+                    td.text-center= post.title
+                    td.text-center= post.article
+                    td
+                      = link_to "show", post_path(post.id)
+                      = link_to "edit", edit_post_path(post)
+                      = link_to "delete", post_path(post.id), method: :delete

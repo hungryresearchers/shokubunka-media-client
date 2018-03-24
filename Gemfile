@@ -21,7 +21,9 @@ gem 'babel-transpiler'
 gem 'annotate'
 gem 'activeadmin'
 gem 'draper'
+gem 'bootstrap-sass'
 gem 'pundit'
+gem 'simple_form'
 
 group :development, :test do
   gem 'pry-byebug'

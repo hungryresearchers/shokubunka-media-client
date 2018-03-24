@@ -1,0 +1,28 @@
+.row
+  .col-lg-12
+    h2 記事一覧
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .ibox
+        .ibox-content
+          .text-right
+            = link_to "投稿を新規に作成", new_post_path, class: 'btn btn-info btn-md'
+          .table-responsive
+            table.table.table-striped.table-hover.text-nowrap
+              thead
+                tr
+                  th ID
+                  th タイトル
+                  th 記事
+                  th
+              tbody
+                - @posts.each do |post|
+                  tr
+                    td= post.id
+                    td= post.title
+                    td= post.article
+                    td
+                      = link_to "show", post_path(post.id),class: 'btn btn-xs btn-info'
+                      = link_to "edit", edit_post_path(post),class: 'btn btn-xs btn-warning'
+                      = link_to "delete", post_path(post.id), method: :delete,class: 'btn btn-xs btn-danger'

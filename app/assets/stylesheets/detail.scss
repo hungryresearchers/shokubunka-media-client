@@ -15,14 +15,18 @@ body.detail {
         }
       }
       .author-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
         img {
-          width: 4vw;
-          height: 4vw;
+          width: 6vw;
+          height: 6vw;
           display: inline-block;
         }
         p {
           color: #4c4c46;
-          font-size: 0.8em;
+          font-size: 1em;
           font-weight: 600;
           display: inline-block;
         }
@@ -35,7 +39,7 @@ body.detail {
         margin: 0;
         padding: 0;
         .article-info-container {
-          margin-bottom: 7vw;
+          margin-bottom: 1vw;
           .image-container {
             width: 100%;
             height: 73vw;
@@ -46,26 +50,14 @@ body.detail {
               height: 100%;
             }
             .shop-info-container {
+              svg {
+                width: 16vw;
+                height: 16vw;
+              }
               text-align: center;
               position: absolute;
               top: 66vw;
               right: 5%;
-              .shop-to-link {
-                width: 14vw;
-                height: 14vw;
-                min-height: 50px;
-                min-width: 50px;
-                border-radius: 7.5vw;
-                border: 0.5em solid #ffffff;
-                background-color: #e85c40;
-                margin: 0 auto;
-                p {
-                  font-size: 7vw;
-                  color: #ffffff;
-                  font-weight: 600;
-                  font-family: "toppan bunkyu midashi gothic";
-                }
-              }
               .shop-info-description {
                 .info-description-triangle {
                   display: hidden;
@@ -120,7 +112,7 @@ body.detail {
           margin-bottom: 10vh;
           .article-sentence {
             p {
-              font-size: 0.8em;
+              font-size: 0.9em;
               line-height: 2.4em;
               font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
             }
@@ -128,17 +120,32 @@ body.detail {
         }
 
         .shop-info-container {
-          margin-bottom: 15vh;
+          margin: 0;
+        }
+
+        .related-article-info-container {
+          margin: 0;
+          margin-bottom: 8vh;
+          .extra-info-container {
+            .extra-info-contents {
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+              }
+            }
+          }
         }
 
         .extra-info-container {
-          margin: 0 3vw;
+          padding: 0 3vw;
           .extra-info-header {
-            margin-bottom: 2vh;
+            margin-bottom: 1vh;
             h2 {
-              font-size: 1.5em;
+              font-size: 1.2em;
               font-weight: 600;
-              padding-bottom: 2vh;
+              padding-bottom: 1.5vh;
               border-bottom: 0.3em solid #dcdcdb;
               margin-bottom: 0.15em;
             }
@@ -149,7 +156,7 @@ body.detail {
           }
 
           .extra-info-contents {
-            font-size: 1.4em;
+            font-size: 1em;
             font-family: avenir;
             .info-col {
               padding: 0.25em 0;
@@ -188,7 +195,7 @@ body.detail {
               }
 
               .title {
-                margin-bottom: 1.3em;
+                margin-bottom: 0.7em;
                 font-size: 1.2em;
                 line-height: 1.5em;
               }
@@ -203,23 +210,65 @@ body.detail {
               }
 
               .food-thumbnail-container {
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
                 .food-thumbnail {
-                  margin-top: 9%;
                   float: right;
-                  width: 8vw;
-                  height: 8vw;
+                  width: 20vw;
+                  height: 20vw;
                   background-size: cover;
                   background-image: url(sarada.jpg);
-                  min-height: 120px;
-                  min-width: 120px;
+                  min-height: 70px;
+                  min-width: 70px;
                 }
               }
             }
           }
         }
 
+        .written-by-container {
+          margin: 0;
+          margin-bottom: 6vh;
+          .extra-info-container {
+            .extra-info-contents {
+              margin-top: 3vh;
+              justify-content: flex-start;
+              -webkit-justify-content: flex-start;
+            }
+            .writer-img {
+              width: 9vw;
+              height: 9vw;
+              min-width: 60px;
+              min-height: 60px;
+              padding: 0;
+            }
 
+            .writer-name {
+              color: #4c4c46;
+              padding-left: 3vw;
+              font-size: 1.7em;
+              font-weight: 600;
+            }
+          }
+        }
       }
+
+      .close-article-button {
+        padding: 0 4vw;
+        background-color: #e85c40;
+        padding-top: 1.5em;
+        padding-bottom: 1.55em;
+        margin-bottom: 5vh;
+        p {
+          color: white;
+          font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+          font-size: 1.3em;
+        }
+      }
+
     }
 
 
@@ -235,8 +284,8 @@ body.detail {
       }
       .author-info {
         img {
-          width: 1.4vw;
-          height: 1.4vw;
+          width: 2vw;
+          height: 2vw;
           display: inline-block;
           margin-right: 0.4vw;
           margin-bottom: 0.4em;
@@ -273,27 +322,14 @@ body.detail {
           height: 100%;
         }
         .shop-info-container {
+          svg {
+            width: 6vw;
+            height: 6vw;
+          }
           text-align: center;
           position: absolute;
           top: calc(35vw * 0.64);
           right: 3%;
-          .shop-to-link {
-            width: 5.6vw;
-            height: 5.6vw;
-            min-height: 60px;
-            min-width: 60px;
-            border-radius: 2.75vw;
-            border: 0.7em solid #ffffff;
-            background-color: #e85c40;
-            margin: 0 auto;
-            margin-bottom: 3.2vh;
-            p {
-              font-size: 3vw;
-              color: #ffffff;
-              font-weight: 600;
-              font-family: "toppan bunkyu midashi gothic";
-            }
-          }
           .shop-info-description {
             padding: 1vh 2.3vw;
             border-radius: 3vw;
@@ -364,6 +400,16 @@ body.detail {
 
     .related-article-info-container {
       margin-bottom: 11vh;
+      .extra-info-container {
+        .extra-info-contents {
+          .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+          }
+        }
+      }
     }
 
     .extra-info-container {
@@ -438,7 +484,6 @@ body.detail {
 
           .food-thumbnail-container {
             .food-thumbnail {
-              margin-top: 9%;
               float: right;
               width: 8vw;
               height: 8vw;
@@ -462,7 +507,9 @@ body.detail {
           -webkit-justify-content: flex-start;
         }
         .writer-img {
+          padding: 0;
           width: 5vw;
+          height: 5vw;
           min-width: 60px;
           min-height: 60px;
         }
@@ -487,6 +534,34 @@ body.detail {
         color: white;
         font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
         font-size: 1.3em;
+      }
+    }
+  }
+
+  @media (min-width: 426px) and (max-width: 768px) {
+    .article-author {
+      font-family: avenir;
+      .release-date {
+        p {
+          font-size: 1em;
+          color: #4c4c46;
+        }
+      }
+      .author-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        img {
+          width: 4vw;
+          height: 4vw;
+        }
+        p {
+          color: #4c4c46;
+          font-size: 1.3em;
+          font-weight: 600;
+          padding-left: 2vw;
+        }
       }
     }
   }

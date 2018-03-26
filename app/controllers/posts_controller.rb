@@ -41,11 +41,29 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :author, :article)
+    params.require(:post).permit(
+                                :title,
+                                :author,
+                                :article,
+                                :shop_tel,
+                                :price_min,
+                                :price_max,
+                                :shop_locate_url,
+                                :business_hours
+                                )
   end
 
   def update_post_params
-    params.require(:post).permit(:title, :author, :article)
+    params.require(:post).permit(
+                                :title,
+                                :author,
+                                :article,
+                                :shop_tel,
+                                :price_min,
+                                :price_max,
+                                :shop_locate_url,
+                                :business_hours
+                                )
   end
 
 

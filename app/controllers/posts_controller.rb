@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      flash :danger
+      render :new
     end
   end
 
@@ -43,6 +43,7 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(
+                                :image,
                                 :title,
                                 :author,
                                 :article,
@@ -56,6 +57,7 @@ class PostsController < ApplicationController
 
   def update_post_params
     params.require(:post).permit(
+                                :image,
                                 :title,
                                 :author,
                                 :article,

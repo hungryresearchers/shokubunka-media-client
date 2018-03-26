@@ -1,4 +1,8 @@
 
 .row
-  .col-md-12
+  .col-md-10.col-md-offset-1
     = render 'form'
+javascript:
+  $(function() {
+    $('#article').froalaEditor();
+  });

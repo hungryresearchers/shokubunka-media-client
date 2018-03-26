@@ -7,11 +7,12 @@ end
 
 
 gem 'rails', '~> 5.1.4'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.20'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'coffee-script-source', '1.8.0' 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'cancancan'
@@ -24,6 +25,9 @@ gem 'draper'
 gem 'bootstrap-sass'
 gem 'pundit'
 gem 'simple_form'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -43,3 +47,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'therubyracer'
+gem 'carrierwave'
+gem 'mini_magick'

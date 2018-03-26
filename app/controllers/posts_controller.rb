@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      flash :danger
+      render :new
     end
   end
 

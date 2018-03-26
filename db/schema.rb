@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20180326153139) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -67,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180326153139) do
     t.integer "price_max"
     t.string "shop_locate_url"
     t.string "business_hours"
-    t.binary "image"
+    t.binary "image", null: false
   end
 
   create_table "writers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

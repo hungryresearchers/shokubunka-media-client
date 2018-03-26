@@ -1,0 +1,102 @@
+.container-fluid
+  .row
+    nav.top-header.navbar-fixed-top
+      .item-container.navbar-brand role="button"
+        .
+          p.text-center.YuGothic.what-is-text What is
+          p.zousan.text-center.shokubunka-text ショクブ ンカ
+      .collapse.navbar-collapse#navbarSupportedContent.item-container
+        ul.pull-right.item-container
+          li.nav-item.nav-link.active role="button" 記事
+          li.nav-item.nav-link role="button"イベント
+          li.nav-item role="button"ブログ
+  .row
+    .header_image.text-center
+      .center_logo
+        .empty-header
+        .logo-container.item-container
+          .
+            h1.zousan カ ナ マ チ
+            h2.zousan ショクブ ンカ
+  .row
+    .attributes
+      .center-block.row.item-container.mobile-header-text
+        .col-xs-1
+        .col-xs-2 role="button" うまい
+        .col-xs-2 role="button" 安い
+        .col-xs-2 role="button" おしゃれ
+        .col-xs-2 role="button" ボリューム
+        .col-xs-2 role="button" コスパ
+        .col-xs-1
+
+  .row.article-search
+    form
+      input.form-control placeholder="気になるワードを検索"
+      i.fas.fa-search
+
+  .article-container
+    .row.article-list
+      .col-md-4.col-xs-12
+        .article-card
+          .image-container
+            .new-article-tag
+              p.new-text NEW
+            = image_tag 'test.png', class: "img-thumbnail"
+          .article-info
+            .tags
+              ul
+                li ハンバーグ
+                li 洋食
+                .release-date
+                  p 2018 2.10
+            .article-title role="button"
+              h2 絶品ハンバーグを食べに行ったら天国だった話
+            .article-author
+              .mobile-release-date
+                p 2018 2.10
+              .author-info
+                = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
+                p.writer-name Yoshi Kazuya
+      - @posts.each do |post|
+        .col-md-4.col-xs-6
+          .article-card
+            .image-container
+              = image_tag post.image, class: "img-article"
+              = image_tag 'test.png', class: "fog"
+            .article-info
+              .tags
+                ul
+                  li ハンバーグ
+                  li 洋食
+                  .release-date
+                    p= post.created_at
+              .article-title role="button"
+                h2= post.title
+              .article-author
+                .mobile-release-date
+                  p 2018 2.10
+                .author-info
+                  = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
+                  p.writer-name= post.author
+    
+      / .col-md-4.col-xs-6
+      /   .article-card
+      /     .image-container
+      /       = image_tag 'test.png', class: "img-article img-thumbnail"
+      /     .article-info
+      /       .tags
+      /         ul
+      /           li ハンバーグ
+      /           li 洋食
+      /           .release-date
+      /             p 2018 2.10
+      /       .article-title role="button"
+      /         h2 絶品ハンバーグを食べに行ったら天国だった話
+      /       .article-author
+      /         .mobile-release-date
+      /           p 2018 2.10
+      /         .author-info
+      /           = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
+      /           p.writer-name Yoshi Kazuya
+
+

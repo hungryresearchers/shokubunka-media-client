@@ -187,6 +187,10 @@ body {
             }
             .author-info {
               float: right;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
               p {
                 display: inline-block;
               }
@@ -224,6 +228,10 @@ body {
       }
       .article-author {
         .author-info {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
           img {
             margin-right: 5px;
           }
@@ -255,7 +263,10 @@ body {
               display: block;
             }
             .author-info {
-              display: block;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
             }
           }
           .article-title {

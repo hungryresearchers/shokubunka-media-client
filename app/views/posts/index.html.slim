@@ -12,6 +12,7 @@
             table.table.table-striped.table-hover.text-nowrap
               thead
                 tr
+                  th サムネイル
                   th ID
                   th タイトル
                   th 記事
@@ -22,6 +23,7 @@
               tbody
                 - @posts.each do |post|
                   tr
+                    td= image_tag post.image.thumb.url
                     td= post.id
                     td= post.title
                     td= post.article

@@ -10,8 +10,9 @@ body.detail {
       font-family: avenir;
       .release-date {
         p {
-          font-size: 0.6em;
+          font-size: 0.9em;
           color: #4c4c46;
+          margin-bottom: 3px;
         }
       }
       .author-info {
@@ -26,7 +27,7 @@ body.detail {
         }
         p {
           color: #4c4c46;
-          font-size: 1em;
+          font-size: 1.1em;
           font-weight: 600;
           display: inline-block;
         }

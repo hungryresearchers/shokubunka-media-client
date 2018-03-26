@@ -1,0 +1,353 @@
+body.detail {
+  background: white;
+}
+.detail {
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  @media (max-width: 769px) {
+    .article-author {
+      font-family: avenir;
+      .release-date {
+        p {
+          font-size: 0.9em;
+          color: #4c4c46;
+        }
+      }
+      .author-info {
+        img {
+          width: 5vw;
+          height: 5vw;
+          display: inline-block;
+        }
+        p {
+          color: #4c4c46;
+          font-size: 1.5em;
+          font-weight: 600;
+          display: inline-block;
+        }
+      }
+    }
+
+    .container-fluid {
+      .article-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        .article-info-container {
+          margin-bottom: 0;
+          .image-container {
+            width: 100%;
+            height: 73vw;
+            margin-bottom: 4vh;
+            position: relative;
+            .article-thumbnail {
+              width: 100%;
+              height: 100%;
+            }
+            .shop-info-container {
+              text-align: center;
+              position: absolute;
+              top: 66vw;
+              .shop-to-link {
+                width: 15vw;
+                height: 15vw;
+                min-height: 50px;
+                min-width: 50px;
+                border-radius: 7.5vw;
+                border: 0.5em solid #ffffff;
+                background-color: #e85c40;
+                margin: 0 auto;
+                p {
+                  font-size: 7vw;
+                  color: #ffffff;
+                  font-weight: 600;
+                  font-family: "toppan bunkyu midashi gothic";
+                }
+              }
+              .shop-info-description {
+                .info-description-triangle {
+                  display: hidden;
+                }
+                .info-description-text {
+                  color: #e85c40;
+                  font-size: 0.6em;
+                  font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+                  letter-spacing: 0.7px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+  @media screen and (min-width: 769px) {
+    .article-author {
+      font-family: avenir;
+      .release-date {
+        p {
+          font-size: 0.9em;
+          color: #4c4c46;
+        }
+      }
+      .author-info {
+        img {
+          width: 1.4vw;
+          height: 1.4vw;
+          display: inline-block;
+          margin-right: 0.4vw;
+          margin-bottom: 0.4em;
+          min-width: 28px;
+          min-height: 28px;
+        }
+        p {
+          color: #4c4c46;
+          font-size: 1.5em;
+          font-weight: 600;
+          display: inline-block;
+        }
+      }
+    }
+    .container-fluid {
+      width: 100%;
+      .article-container {
+        width: 38vw;
+        min-width: 550px;
+        margin: 0 auto;
+        padding: 0;
+        padding-top: 5vh;
+      }
+    }
+    .article-info-container {
+      margin-bottom: 7vh;
+      .image-container {
+        width: 100%;
+        margin-bottom: 8vh;
+        height: calc(35vw * 0.72);
+        position: relative;
+        .article-thumbnail {
+          width: 100%;
+          height: 100%;
+        }
+        .shop-info-container {
+          text-align: center;
+          position: absolute;
+          top: calc(35vw * 0.64);
+          right: 3%;
+          .shop-to-link {
+            width: 5.6vw;
+            height: 5.6vw;
+            min-height: 60px;
+            min-width: 60px;
+            border-radius: 2.75vw;
+            border: 0.7em solid #ffffff;
+            background-color: #e85c40;
+            margin: 0 auto;
+            margin-bottom: 3.2vh;
+            p {
+              font-size: 3vw;
+              color: #ffffff;
+              font-weight: 600;
+              font-family: "toppan bunkyu midashi gothic";
+            }
+          }
+          .shop-info-description {
+            padding: 1vh 2.3vw;
+            border-radius: 3vw;
+            background-color: #e85c40;
+            position: relative;
+            .info-description-triangle {
+              height: 2.3em;
+              width: 2.3em;
+              position: absolute;
+              top: -0.6em;
+              transform: rotate(45deg);
+              background-color: #e85c40;
+              z-index: 1;
+              border-radius: 5px;
+            }
+            .info-description-text {
+              color: white;
+              font-size: 1.4em;
+              font-family: "toppan bunkyu midashi gothic";
+              letter-spacing: 0.7px;
+              z-index: 2;
+            }
+          }
+        }
+      }
+    }
+
+    .article-contents-container {
+      .article-fine-info {
+        margin-bottom: 2.5em;
+        .article-tags {
+          .article-tag {
+            display: inline-block;
+            padding: 0.6em 1.8em 0.7em 1.8em;
+            background-color: #4c4c46;
+            margin-right: 1em;
+            p {
+              color: #ffffff;
+              font-family: "toppan bunkyu midashi gothic";
+              font-size: 1.4em;
+            }
+          }
+        }
+      }
+      .article-title {
+        margin-bottom: 2em;
+        h1 {
+          font-size: 2em;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .article-sentence-container {
+      margin-bottom: 10vh;
+      .article-sentence {
+        p {
+          font-size: 1.3em;
+          line-height: 2.2em;
+          font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+        }
+      }
+    }
+
+    .shop-info-container {
+      margin-bottom: 15vh;
+    }
+
+    .related-article-info-container {
+      margin-bottom: 11vh;
+    }
+
+    .extra-info-container {
+      .extra-info-header {
+        margin-bottom: 2vh;
+        h2 {
+          font-size: 1.5em;
+          font-weight: 600;
+          padding-bottom: 2vh;
+          border-bottom: 0.3em solid #dcdcdb;
+          margin-bottom: 0.15em;
+        }
+        hr {
+          margin: 0;
+          border-top: 0.15em solid #dcdcdb;
+        }
+      }
+
+      .extra-info-contents {
+        font-size: 1.4em;
+        font-family: avenir;
+        .info-col {
+          padding: 0.25em 0;
+        }
+        .map-container {
+          margin-top: 5vh;
+          font-size: 0.7em;
+          font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+          .address-container {
+            .info {
+              margin-bottom: 1.4em;
+              p {
+                line-height: 1.8em;
+              }
+            }
+            .map {
+              img {
+                width: 24em;
+                height: 24em;
+                min-width: 280px;
+                min-height: 280px;
+              }
+            }
+          }
+        }
+
+        .row {
+          .tags {
+            font-size: 0.7em;
+            font-family: "toppan bunkyu gothic";
+            margin-bottom: 0.7em;
+            .tag {
+              display: inline-block;
+              margin-right: 0.9em;
+            }
+          }
+
+          .title {
+            margin-bottom: 1.3em;
+            font-size: 1.2em;
+            line-height: 1.5em;
+          }
+
+          .article-author {
+            .release-date {
+              font-size: 0.7em;
+            }
+            .writer-name {
+              font-size: 1em;
+            }
+          }
+
+          .food-thumbnail-container {
+            .food-thumbnail {
+              margin-top: 9%;
+              float: right;
+              width: 8vw;
+              height: 8vw;
+              background-size: cover;
+              background-image: url(sarada.jpg);
+              min-height: 120px;
+              min-width: 120px;
+            }
+          }
+        }
+
+      }
+    }
+
+    .written-by-container {
+      margin-bottom: 9vh;
+      .extra-info-container {
+        .extra-info-contents {
+          margin-top: 4vh;
+          justify-content: flex-start;
+          -webkit-justify-content: flex-start;
+        }
+        .writer-img {
+          width: 5vw;
+          min-width: 60px;
+          min-height: 60px;
+        }
+
+        .writer-name {
+          color: #4c4c46;
+          padding-left: 0.3vw;
+          font-family: avenir;
+          font-size: 1.2em;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .close-article-button {
+      width: 100%;
+      background-color: #e85c40;
+      padding-top: 1.5em;
+      padding-bottom: 1.55em;
+      margin-bottom: 10vh;
+      p {
+        color: white;
+        font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+        font-size: 1.3em;
+      }
+    }
+  }
+}

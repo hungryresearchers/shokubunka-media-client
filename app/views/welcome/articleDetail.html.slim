@@ -1,0 +1,98 @@
+body.detail
+  .container-fluid
+    .article-container
+      .row.article-info-container
+        .image-container
+          .shop-info-container
+            .shop-to-link.item-container
+              p i
+            .shop-info-description.item-container
+              span.info-description-triangle
+              p.info-description-text お店情報
+          = image_tag 'sarada.jpg', class: "article-thumbnail"
+      .article-contents-container
+        .article-fine-info
+          .article-tags
+            .article-tag
+              p ハンバーガー
+            .article-tag
+              p うまい
+        .article-title
+          h1 絶品ハンバーグを食べに行ったら天国な話
+        .article-author
+          .release-date
+            p 2018 2.10
+          .author-info
+            = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
+            p.writer-name Yoshi Kazuya
+      .row.article-sentence-container
+        .article-sentence
+          p 　業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！ 業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！
+      .row.shop-info-container
+        .extra-info-container
+          .extra-info-header
+            h2.extra-info-title お店の情報
+            hr
+          .extra-info-contents
+            .row.info-col
+              .col-xs-1.col-md-1
+                i.fas.fa-phone
+              .col-xs-11.col-md-11
+                p
+                  span.font-weight-bold 03-5699-3588
+            .row.info-col
+              .col-xs-1.col-md-1
+                i.fal.fa-clock
+              .col-xs-11.col-md-11
+                p
+                  span.font-weight-bold 11:00~23:00&ensp;&ensp;
+                  span
+                    span.font-weight-bold 木曜
+                    span 定休日
+            .row.info-col
+              .col-xs-1.col-md-1
+                i.fal.fa-clock
+              .col-xs-11.col-md-11
+                p
+                  span 金町駅から徒歩
+                  span.font-weight-bold ４
+                  span 分
+            .row.map-container
+              .col-xs-1.col-md-1
+                i.fal.fa-clock
+              .col-xs-11.col-md-11.address-container
+                .info
+                  p.postal-code 〒162-0825
+                  p.address 東京都新宿区神楽坂３丁目１ 松本ハイツB1F
+                .map
+                  = image_tag 'map.png', class: "article-thumbnail"
+      .row.related-article-info-container
+        .extra-info-container
+          .extra-info-header
+            h2.extra-info-title 関連記事
+            hr
+          .extra-info-contents
+            .row
+              .col-xs-8.col-md-8
+                .tags
+                  .tag ハンバーグ
+                  .tag 洋食
+                h2.title.font-weight-bold 絶品ハンバーグを食べに行ったら天国だった話
+                .article-author
+                  .release-date
+                    p 2018 2.10
+                  .author-info
+                    = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
+                    p.writer-name Yoshi Kazuya
+              .col-xs-4.col-md-4.food-thumbnail-container
+                .food-thumbnail
+      .row.written-by-container
+        .extra-info-container
+          .extra-info-header
+            h2.extra-info-title この記事を書いた人
+            hr
+          .extra-info-contents.item-container
+            = image_tag 'yoshi.jpg', class: "writer-img img-circle col-xs-1 col-md-1"
+            p.writer-name Yoshi Kazuya
+      .close-article-button.item-container
+        p.close-article-text 記事を閉じる

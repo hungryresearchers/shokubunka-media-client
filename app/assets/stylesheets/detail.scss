@@ -5,6 +5,12 @@ body.detail {
   .font-weight-bold {
     font-weight: bold;
   }
+  .flex-direction-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
   @media (max-width: 769px) {
     .article-author {
       font-family: avenir;
@@ -163,6 +169,9 @@ body.detail {
             font-family: avenir;
             .info-col {
               padding: 0.25em 0;
+              .col-xs-1, .col-md-1 {
+                padding-left: 2vw;
+              }
             }
             .map-container {
               margin-top: 5vh;
@@ -386,13 +395,16 @@ body.detail {
       }
     }
 
-    .article-sentence-container {
-      margin-bottom: 10vh;
-      .article-sentence {
-        p {
-          font-size: 1.3em;
-          line-height: 2.2em;
-          font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+    .article-container {
+      .article-sentence-container {
+        margin-top: 7vh;
+        margin-bottom: 10vh;
+        .article-sentence {
+          p {
+            font-size: 1.3em;
+            line-height: 2.2em;
+            font-family: "游ゴシック体", "yu gothic", yugothic, "ヒラギノ角ゴ pro", "hiragino kaku gothic pro", "メイリオ", "meiryo", "sans-serif";
+          }
         }
       }
     }

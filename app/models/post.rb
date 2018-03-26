@@ -13,9 +13,11 @@
 #  price_max       :integer
 #  shop_locate_url :string(255)
 #  business_hours  :string(255)
+#  image           :binary(65535)
 #
 
 class Post < ApplicationRecord
+  mount_uploader :image, ImageUploader
 
   validates :title,
             presence: true,

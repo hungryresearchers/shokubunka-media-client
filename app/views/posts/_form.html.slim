@@ -1,13 +1,19 @@
-= simple_form_for(@post, :html => { :class => 'form-horizontal' }) do |f|
+= simple_form_for(@post, :html => { :class => 'form-horizontal' },
+  rapper: :horizontal_form,
+  wrapper_mappings: { radio_buttons: :horizontal_radio_and_checkboxes_inline, boolean: :horizontal_boolean_inline }) do |f|
 
   = f.input :title
   = f.input :author
-  = f.input :article, as: :text
+  = f.cktext_area :article, as: :text, input_html: { id: 'article' }
   = f.input :shop_tel, as: :integer
-  = f.input :price_min,as: :integer
-  = f.input :price_max,as: :integer
+  .form-row
+    .col-md-6
+      = f.input :price_min,as: :integer
+    .col-md-6
+      = f.input :price_max,as: :integer
   = f.input :shop_locate_url
   = f.input :business_hours
-  = f.input 'submit', label: false do
+  = f.input 'submit', label: false, wrapper: :horizontal_button_group do
     = f.submit "登録", class: 'btn btn-primary'
     = link_to "キャンセル", posts_path(nonclear: true), class: 'btn btn-default'
+

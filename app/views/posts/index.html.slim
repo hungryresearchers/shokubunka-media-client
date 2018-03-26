@@ -15,6 +15,9 @@
                   th ID
                   th タイトル
                   th 記事
+                  th 価格帯
+                  th 住所
+                  th 営業時間帯
                   th
               tbody
                 - @posts.each do |post|
@@ -22,6 +25,9 @@
                     td= post.id
                     td= post.title
                     td= post.article
+                    td #{post.price_min} ~ #{post.price_max}
+                    td=link_to 'googleマップで確認', post.shop_locate_url
+                    td= post.business_hours
                     td
                       = link_to "show", post_path(post.id),class: 'btn btn-xs btn-info'
                       = link_to "edit", edit_post_path(post),class: 'btn btn-xs btn-warning'

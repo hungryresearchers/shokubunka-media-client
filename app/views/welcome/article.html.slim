@@ -37,16 +37,16 @@ body.detail
             .article-tag
               p うまい
         .article-title
-          h1 3月オープンの話題沸騰のクレイジー餃子に行ってきました
+          h1= @post.title
         .article-author
           .release-date
-            p 2018 2.10
+            p= @post.created_at
           .author-info
             = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
-            p.writer-name Yoshi Kazuya
+            p.writer-name= @post.writer
       .row.article-sentence-container
         .article-sentence
-          p 業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！ 業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、毎日のお弁当用にはかなり便利かと思います！
+          = @post.article.html_safe
       .row.shop-info-container
         .extra-info-container
           .extra-info-header
@@ -58,7 +58,7 @@ body.detail
                 i.fas.fa-phone
               .col-xs-11.col-md-11
                 p
-                  span.font-weight-bold 03-5699-3588
+                  span.font-weight-bold= @post.shop_tel
             .row.info-col
               .col-xs-1.col-md-1
                 i.fal.fa-clock
@@ -112,6 +112,6 @@ body.detail
             hr
           .extra-info-contents.item-container
             = image_tag 'yoshi.jpg', class: "writer-img img-circle col-xs-1 col-md-1"
-            p.writer-name Yoshi Kazuya
+            p.writer-name= @post.writer
       .close-article-button.item-container
         p.close-article-text 記事を閉じる

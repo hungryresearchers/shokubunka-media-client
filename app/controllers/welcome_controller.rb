@@ -4,7 +4,16 @@ class WelcomeController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    
+  end
+
   def article
-    @post = Post.find(1)
+    if Post.find(params[:id]).present?
+      @post = Post.find(params[:id])
+    else
+      redirect_to :index
+      flash[:danger]
+    end
   end
 end

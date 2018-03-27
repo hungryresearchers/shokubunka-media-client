@@ -70,14 +70,14 @@
                   li 洋食
                   .release-date
                     p= post.created_at
-              .article-title role="button"
-                h2= post.title
+              .article-title
+                =link_to post.title, welcome_article_path(post)
               .article-author
                 .mobile-release-date
                   p 2018 2.10
                 .author-info
                   = image_tag 'yoshi.jpg', class: "writer-img img-circle d-inline-block"
-                  p.writer-name= post.author
+                  p.writer-name= post.writer
     
       / .col-md-4.col-xs-6
       /   .article-card

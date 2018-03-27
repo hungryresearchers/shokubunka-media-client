@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :posts
-  resources :welcome, only: [:index]
-  get 'welcome/article' => 'welcome#article'
+  resources :welcome
+  get 'welcome/:id/article/(.:format)' => 'welcome#article', as: 'welcome_article'
 end

@@ -12,25 +12,29 @@
             table.table.table-striped.table-hover.text-nowrap
               thead
                 tr
-                  th サムネイル
                   th ID
+                  th サムネイル
                   th タイトル
+                  th ライター
                   th 記事
                   th 価格帯
-                  th 住所
+                  th 店舗住所
+                  th 店舗電話番号
                   th 営業時間帯
                   th
               tbody
                 - @posts.each do |post|
                   tr
-                    td= image_tag post.image
                     td= post.id
+                    td= image_tag post.image, class: 'img-thumbnail'
                     td= post.title
+                    td= post.writer
                     td= post.article.html_safe
                     td #{post.price_min} ~ #{post.price_max}
-                    td=link_to 'googleマップで確認', post.shop_locate_url
+                    td= link_to "mapで確認", post.shop_locate_url, class: 'btn btn-info'
+                    td= post.shop_tel
                     td= post.business_hours
                     td
-                      = link_to "show", post_path(post.id),class: 'btn btn-xs btn-info'
-                      = link_to "edit", edit_post_path(post),class: 'btn btn-xs btn-warning'
-                      = link_to "delete", post_path(post.id), method: :delete,class: 'btn btn-xs btn-danger'
+                      = link_to "preview", post_path(post.id),class: 'btn btn-xs btn-info'
+                      = link_to "編集", edit_post_path(post),class: 'btn btn-xs btn-warning'
+                      = link_to "削除", post_path(post.id), method: :delete,class: 'btn btn-xs btn-danger'

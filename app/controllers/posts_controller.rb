@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(
                                 :image,
                                 :title,
-                                :author,
+                                :writer,
                                 :article,
                                 :shop_tel,
                                 :price_min,
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(
                                 :image,
                                 :title,
-                                :author,
+                                :writer,
                                 :article,
                                 :shop_tel,
                                 :price_min,

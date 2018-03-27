@@ -83,6 +83,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  @font-face {
+    font-family: 'zousan';
+    src: font-url('zousan.otf') format('truetype');
+  }
+
   .container-fluid {
     padding: 0;
   }

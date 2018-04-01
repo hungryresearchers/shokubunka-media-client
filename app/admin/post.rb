@@ -1,10 +1,10 @@
 ActiveAdmin.register Post do
-  permit_params :title, :author, :article
+  permit_params :title, :writer, :article
 
   form do |f|
     f.inputs do
       f.input :title
-      f.input :author
+      f.input :writer
       f.input :article
     end
     f.actions

@@ -83,8 +83,13 @@ body {
 }
 
 @media (max-width: 480px) {
+  @font-face {
+    font-family: 'zousan';
+    src: font-url('zousan.otf') format('truetype');
+  }
+
   .container-fluid {
-    padding: 0 0.37vw;
+    padding: 0;
   }
 
   .new-article-tag {
@@ -187,6 +192,10 @@ body {
             }
             .author-info {
               float: right;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
               p {
                 display: inline-block;
               }
@@ -224,6 +233,10 @@ body {
       }
       .article-author {
         .author-info {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
           img {
             margin-right: 5px;
           }
@@ -255,7 +268,10 @@ body {
               display: block;
             }
             .author-info {
-              display: block;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
             }
           }
           .article-title {
@@ -431,21 +447,14 @@ body {
         .image-container {
           width: 27vw;
           height: calc(27vw * 0.73);
+          background-image: url(sarada.jpg);
+          background-size: cover;
           margin: 0 auto;
           .img-article {
-            max-width: 90%;
-            max-height: 90%;
-            margin-bottom: 1.5vh;
-            z-index: -10000000;
-            overflow: hidden;
-          }
-          .fog {
             width: 100%;
             height: 100%;
-            margin-top: -40.99vh;
-            margin-left: 0vw;
-            position: related;
-            z-index: 10000000;
+            margin-bottom: 1.5vh;
+            background-color: transparent;
           }
         }
         .article-info{

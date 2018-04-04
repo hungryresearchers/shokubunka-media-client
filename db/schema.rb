@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326153139) do
+ActiveRecord::Schema.define(version: 20180401130144) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
     t.bigint "resource_id"
-    t.string "author_type"
-    t.bigint "author_id"
+    t.string "writer_type"
+    t.bigint "writer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+    t.index ["writer_type", "writer_id"], name: "index_active_admin_comments_on_writer_type_and_writer_id"
   end
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180326153139) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "roles"
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(version: 20180326153139) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "permission", default: 0
     t.index ["email"], name: "index_writers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_writers_on_reset_password_token", unique: true
   end

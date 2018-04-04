@@ -23,4 +23,6 @@ class Writer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  enum permission: { nothing: 0, writer: 1, admin: 2}
 end

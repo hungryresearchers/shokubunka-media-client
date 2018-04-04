@@ -27,4 +27,6 @@
 public/assets/
 lib/templates/
 
+public/uploads
+
 .DS_Store

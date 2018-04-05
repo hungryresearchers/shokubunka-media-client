@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20180401130144) do
     t.integer "price_max"
     t.string "shop_locate_url"
     t.string "business_hours"
-    t.binary "image", null: false
+    t.binary "image"
   end
 
   create_table "writers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

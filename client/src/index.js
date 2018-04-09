@@ -5,5 +5,9 @@ import ReactDOM from 'react-dom'
 // import App from './App'
 // import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<div>保gへh</div>, document.getElementById('root'))
+const root = document.getElementById('root')
+if (root == null) {
+  throw new Error('root doesnt exit')
+}
+ReactDOM.render(<div>保gへh</div>, root)
 // registerServiceWorker()

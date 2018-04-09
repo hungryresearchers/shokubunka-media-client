@@ -16,6 +16,7 @@
     "flow": "flow"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.2",
     "eslint": "^4.10.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-config-standard": "^10.2.1",

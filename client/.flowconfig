@@ -5,6 +5,7 @@
 
 [libs]
 flow-typed
+./types/common-types.js
 
 [lints]
 

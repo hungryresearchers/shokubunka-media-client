@@ -10,7 +10,7 @@ const mapStateToProps = ({ home }) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   actions: {
     initialize() {
       dispatch(initialize())

@@ -1,4 +1,5 @@
 // @flow
+import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -15,7 +16,7 @@ if (root == null) {
   throw new Error('root doesnt exit')
 }
 ReactDOM.render(
-  <Provider store={store} >
+  <Provider store={store}>
     <Routes />
   </Provider>,
   root

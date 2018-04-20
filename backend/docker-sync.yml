@@ -1,9 +1,0 @@
-version: '2'
-options:
-  rsync_image: 'eugenmayer/rsync'
-syncs:
-  hungry_sync:
-    sync_strategy: 'rsync' # Don't use unison!!
-    src: './'
-    sync_host_port: 20871
-    sync_excludes: ["Gemfile.lock", "/vendor/bundle"]

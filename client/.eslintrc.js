@@ -29,5 +29,6 @@ module.exports = {
     'react/no-unused-prop-types': 'error',
     'flowtype/define-flow-type': 1,
     'flowtype/use-flow-type': 1,
+    'no-unused-vars': 'warn',
   },
 }

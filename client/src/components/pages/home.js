@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react'
+import { HeaderTitle } from '../atoms/header-icon'
 
 type Props = {
   actions: Object,
@@ -16,7 +17,9 @@ export default class Home extends Component<Props, void> {
 
   render() {
     return (
-      <div>Home</div>
+      <div>
+        <HeaderTitle />
+      </div>
     )
   }
 }

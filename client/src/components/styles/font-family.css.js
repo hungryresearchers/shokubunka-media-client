@@ -2,7 +2,7 @@
 import { injectGlobal } from 'styled-components'
 import zousanFont from '../assets/fonts/zousan.otf'
 
-const fontFace = `
+export const fontFace = `
   @font-face {
     font-family: 'zousan';
     src: url(${zousanFont}) format('truetype');
@@ -11,6 +11,10 @@ const fontFace = `
 
 injectGlobal`${fontFace}`
 
-export const zousan = `font-family: 'zousan';`
-
-export const YuGothic = `font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";`
+export const FONT_FAMILY = {
+  ZOUSAN: `font-family: 'zousan';`,
+  YUGOTHIC: `font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";`,
+  TOPPANBUNKYU: `font-family: "Toppan Bunkyu Midashi Gothic";`,
+  OBLIQUE: `font-family: oblique;`,
+  AVENIR: 'font-family: Avenir;'
+}

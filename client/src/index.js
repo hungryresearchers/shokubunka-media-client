@@ -6,9 +6,9 @@ import { Provider } from 'react-redux'
 
 import store from './modules'
 
-import Routes from './routes'
-// import './index.css'
-// import App from './App'
+import App from './routes'
+import './components/styles/common.css'
+import './components/styles/font-family.css'
 // import registerServiceWorker from './registerServiceWorker'
 
 const root = document.getElementById('root')
@@ -17,7 +17,7 @@ if (root == null) {
 }
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <App />
   </Provider>,
   root
 )

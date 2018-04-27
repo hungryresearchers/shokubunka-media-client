@@ -16,6 +16,7 @@ export const HeaderIcon = () => (
 
 const Container = styled.div`
   opacity: 0.3;
+  text-align: center;
 
   &:hover {
     opacity: 1;
@@ -24,14 +25,14 @@ const Container = styled.div`
 `
 const UpperText = styled.p`
   ${AVENIR}
-  font-size: 1.1em;
-  line-height: 1.1em;
+  font-size: 1.0em;
+  line-height: 1.0em;
   font-weight: 600;
 `
 
 const BottomText = styled.p`
   ${ZOUSAN}
-  font-size: 1.0em;
+  font-size: 0.9em;
   line-height: 1.0em;
   letter-spaceing: 3em;
 `

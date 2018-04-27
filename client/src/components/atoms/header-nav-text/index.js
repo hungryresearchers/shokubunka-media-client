@@ -8,7 +8,7 @@ import { FONT_FAMILY } from '../../styles/font-family.css'
 const { WHITE } = COLORS
 const { TOPPANBUNKYU } = FONT_FAMILY
 
-type Props = {|
+export type Props = {|
   +text: string,
   +linkTo: string,
 |}
@@ -18,8 +18,7 @@ export const HeaderNavText = ({ text, linkTo }: Props) => (
 )
 
 const Text = styled(Link)`
-  font-size: 1.4em;
-  font-weight: 600;
+  font-size: 1.2em;
   text-align: center;
   padding: 0 0.027vw;
   color: ${WHITE};

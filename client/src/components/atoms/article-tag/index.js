@@ -7,19 +7,20 @@ import { COLORS } from '../../styles/colors'
 const { YUGOTHIC } = FONT_FAMILY
 const { GRAY } = COLORS
 
+export type Tag = string
 type Props = {|
-  +tag: string,
+  +tag: Tag,
 |}
 
 export const ArticleTag = ({ tag } : Props) => (
-  <Tag className='d-inline-block'>
+  <Text>
     { tag }
-  </Tag>
+  </Text>
 )
 
-const Tag = styled.div`
+const Text = styled.p`
   ${YUGOTHIC}
-  padding-right: 1vw;
-  font-size: 1.1em;
+  font-size: 1.0em;
   color: ${GRAY};
+  margin: 0;
 `

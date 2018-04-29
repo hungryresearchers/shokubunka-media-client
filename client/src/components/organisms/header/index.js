@@ -4,26 +4,25 @@ import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
 
 import { HeaderIcon } from '../../atoms/header-icon'
-import {
-  type Navs,
-  HeaderNavs
-} from '../../morecules/header-navs'
+import { HeaderNavs } from '../../morecules/header-navs'
 
 const { ORANGE } = COLORS
 
 export const Header = () => (
-  <Container
-    className='d-flex align-items-center justify-content-between'
-  >
-    <IconContainer>
-      <HeaderIcon />
-    </IconContainer>
-    <NavsContainer
-      className='col-4'
+  <header>
+    <Container
+      className='d-flex align-items-center justify-content-between'
     >
-      <HeaderNavs />
-    </NavsContainer>
-  </Container>
+      <IconContainer>
+        <HeaderIcon />
+      </IconContainer>
+      <NavsContainer
+        className='col-8 col-sm-4 pr-3'
+      >
+        <HeaderNavs />
+      </NavsContainer>
+    </Container>
+  </header>
 )
 
 const Container = styled.div`

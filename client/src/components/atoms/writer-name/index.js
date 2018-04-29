@@ -9,10 +9,13 @@ const { AVENIR } = FONT_FAMILY
 
 type Props = {|
   +name: string,
+  fontSize?: string,
 |}
 
-export const WriterName = ({ name }: Props) => (
-  <Text>
+export const WriterName = ({ name, fontSize }: Props) => (
+  <Text
+    fontSize={fontSize}
+  >
     { name }
   </Text>
 )
@@ -20,6 +23,7 @@ export const WriterName = ({ name }: Props) => (
 const Text = styled.p`
   ${AVENIR}
   color: ${GRAY};
-  font-size: 0.7em;
+  font-size: ${props => props.fontSize ? props.fontSize : '0.7em'};
   font-weight: 600;
+  margin: 0;
 `

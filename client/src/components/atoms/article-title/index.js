@@ -22,7 +22,7 @@ export const ArticleTitle = ({ title, articleUrl }: Props) => (
 )
 
 const Container = styled(Link)`
-  text-align: right;
+  text-align: left;
 
   &:hover {
     text-decoration: underline;
@@ -35,6 +35,6 @@ const Text = styled.h2`
   font-size: 1.4em;
   font-weight: bold;
   letter-spacing: 0.04em;
-  line-height: 1.9em;
+  line-height: 1.3em;
   color: ${GRAY};
 `

@@ -17,6 +17,7 @@ export const HeaderIcon = () => (
 const Container = styled.div`
   opacity: 0.3;
   text-align: center;
+  cursor: pointer;
 
   &:hover {
     opacity: 1;

@@ -16,6 +16,6 @@ export const AuthorImg = ({ imgUrl }: Props) => (
 const Img = styled.img.attrs({
   src: props => props.imgUrl
 })`
-  width: 1.7em;
-  height: 1.7em;
+  width: 1.6em;
+  height: 1.6em;
 `

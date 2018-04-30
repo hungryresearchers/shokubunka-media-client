@@ -7,7 +7,7 @@ import {
   ArticleMiddle
 } from '../article-middle'
 import { ArticleTitle } from '../../atoms/article-title'
-import { ArticleBottom } from '../article-bottom'
+import { WriterInfo } from '../writer-info'
 
 export type Props = {|
   +title: string,
@@ -40,7 +40,7 @@ const Article = ({ title, articleUrl, tags, releasedDate, isNew,
           articleUrl={articleUrl}
         />
       </TitleContainer>
-      <ArticleBottom
+      <WriterInfo
         name={writerName}
         imgUrl={imgUrl}
       />

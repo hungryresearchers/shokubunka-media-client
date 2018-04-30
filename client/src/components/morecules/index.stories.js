@@ -6,7 +6,7 @@ import { MemoryRouter as Router } from 'react-router-dom'
 import { HeaderNavs } from './header-navs'
 import { ArticleUpper } from './article-upper'
 import { ArticleMiddle } from './article-middle'
-import { ArticleBottom } from './article-bottom'
+import { WriterInfo } from './writer-info'
 
 import { COLORS } from '../styles/colors'
 import THUMBNAIL from '../images/mock/sarada.jpg'
@@ -72,7 +72,7 @@ storiesOf('Morecules', module)
   ))
   .add('ArticleButtom', () => (
     <div style={{width: '25vw'}}>
-      <ArticleBottom
+      <WriterInfo
         name='Yoshi Kazuya'
         imgUrl={WRITER_IMG}
       />

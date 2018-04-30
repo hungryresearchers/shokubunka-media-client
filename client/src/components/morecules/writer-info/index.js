@@ -9,7 +9,7 @@ type Props = {|
   +imgUrl: string,
 |}
 
-export const ArticleBottom = ({ name, imgUrl }: Props) => (
+export const WriterInfo = ({ name, imgUrl }: Props) => (
   <Container>
     <ImageContainer className='d-inline-block' >
       <AuthorImg

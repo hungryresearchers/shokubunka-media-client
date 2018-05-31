@@ -7,6 +7,10 @@ import { HeaderNavs } from './header-navs'
 import { ArticleUpper } from './article-upper'
 import { ArticleMiddle } from './article-middle'
 import { WriterInfo } from './writer-info'
+import { DateWriterName } from './date-writer-name'
+import { RelatedArticle } from './related-article'
+import { ShopInfoLink } from './shop-info-link'
+import { DetailTop } from './detail-top'
 
 import { COLORS } from '../styles/colors'
 import THUMBNAIL from '../images/mock/sarada.jpg'
@@ -88,5 +92,59 @@ storiesOf('Morecules', module)
           {...articleProps}
         />
       </Router>
+    </div>
+  ))
+  .add('DateWriterName', () => (
+    <div>
+      <DateWriterName
+        releasedDate='2017 7 21'
+        name='Yoshi Kazuya'
+        imgUrl={WRITER_IMG}
+      />
+    </div>
+  ))
+  .add('RelatedArticle', () => (
+    <Router>
+      <div style={{padding: '0 30vw'}}>
+        <RelatedArticle
+          releasedDate='2017 7 21'
+          name='Yoshi Kazuya'
+          writerImgUrl={WRITER_IMG}
+          tags={[
+            'ハンバーグ',
+            '洋食',
+          ]}
+          thumbUrl={THUMBNAIL}
+          title='絶品ハンバーグを食べに行ったら天国だった話'
+          articleUrl='/'
+        />
+      </div>
+    </Router>
+  ))
+  .add('ShopInfoLink', () => (
+    <div style={{backgroundColor: `${MILK}`, height: '90vh', paddingLeft: '10vw'}}>
+      <ShopInfoLink
+        onClick={() => {}}
+      />
+    </div>
+  ))
+  // todo
+  .add('DetailTags', () => (
+    <div></div>
+  ))
+  .add('DetailTop', () => (
+    <div style={{padding: '0 30vw'}}>
+      <DetailTop
+        topImgUrl={THUMBNAIL}
+        onClickInfo={() => {}}
+        tags={[
+          'ハンバーグ',
+          'ご飯'
+        ]}
+        title='絶品ハンバーグを食べに行ったら天国な話'
+        releasedDate='2018 12 21'
+        name='Yoshi Kazuya'
+        imgUrl={WRITER_IMG}
+      />
     </div>
   ))

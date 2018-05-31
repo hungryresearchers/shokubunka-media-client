@@ -12,7 +12,6 @@ type Props = {|
 
 export const ReleasedDate = ({ releasedDate, fontSize }: Props) => (
   <Text
-    className='float-right'
     fontSize={fontSize}
   >
     { releasedDate }

@@ -11,10 +11,10 @@ import { COLORS } from '../../styles/colors'
 
 const { MILK } = COLORS
 
-type Props = {
-  actions: Object,
-  articles: Articles,
-}
+type Props = {|
+  +actions: Object,
+  +articles: Articles,
+|}
 
 export default class Home extends PureComponent<Props, void> {
   constructor(props : Props) {

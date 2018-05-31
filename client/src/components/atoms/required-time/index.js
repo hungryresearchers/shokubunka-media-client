@@ -8,22 +8,25 @@ const { GRAY } = COLORS
 const { AVENIR } = FONT_FAMILY
 
 type Props = {|
-  +name: string,
-  fontSize?: string,
+  +requiredTime: number,
 |}
 
-export const WriterName = ({ name, fontSize }: Props) => (
-  <Text
-    fontSize={fontSize}
-  >
-    { name }
+export const RequiredTime = ({ requiredTime }: Props) => (
+  <Text>
+    金町駅から徒歩
+    <TimeText
+      className='font-weight-bold'
+    >
+      { requiredTime }
+    </TimeText>
+    分
   </Text>
 )
 
 const Text = styled.p`
-  ${AVENIR}
+  ${AVENIR};
   color: ${GRAY};
-  font-size: ${props => props.fontSize ? props.fontSize : '0.8em'};
-  font-weight: 600;
-  margin: 0;
+  font-size: 1.1em;
 `
+
+const TimeText = styled.span``

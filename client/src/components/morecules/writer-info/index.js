@@ -7,18 +7,24 @@ import { WriterName } from '../../atoms/writer-name'
 type Props = {|
   +name: string,
   +imgUrl: string,
+  +imgSize?: string,
+  +fontSize?: string,
 |}
 
-export const WriterInfo = ({ name, imgUrl }: Props) => (
-  <Container>
+export const WriterInfo = ({ name, imgUrl, imgSize, fontSize }: Props) => (
+  <Container
+    className='d-flex align-items-center'
+  >
     <ImageContainer className='d-inline-block' >
       <AuthorImg
         imgUrl={imgUrl}
+        imgSize={imgSize}
       />
     </ImageContainer>
     <NameContainer className='d-inline-block' >
       <WriterName
         name={name}
+        fontSize={fontSize}
       />
     </NameContainer>
   </Container>

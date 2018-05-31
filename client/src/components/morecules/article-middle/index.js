@@ -29,7 +29,7 @@ export const ArticleMiddle = ({ tags, releasedDate }: Props) => (
       }
     </TagsContainer>
     <ReleasedDateContainer
-      className='col-4'
+      className='col-4 text-right'
     >
       <ReleasedDate
         releasedDate={releasedDate}

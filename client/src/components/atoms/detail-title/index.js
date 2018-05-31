@@ -1,4 +1,5 @@
 // @flow
+// TODO article-title との名前を考える
 import React from 'react'
 import styled from 'styled-components'
 import { FONT_FAMILY } from '../../styles/font-family.css'
@@ -7,23 +8,19 @@ import { COLORS } from '../../styles/colors'
 const { YUGOTHIC } = FONT_FAMILY
 const { GRAY } = COLORS
 
-export type Tag = string
 type Props = {|
-  +tag: Tag,
-  +fontSize?: string,
+  +title: string,
 |}
 
-export const ArticleTag = ({ tag, fontSize } : Props) => (
-  <Text
-    fontSize={fontSize}
-  >
-    { tag }
+export const DetailTitle = ({ title }: Props) => (
+  <Text>
+    { title }
   </Text>
 )
 
-const Text = styled.p`
+const Text = styled.h1`
   ${YUGOTHIC}
-  font-size: ${props => props.fontSize || '1.0em'}
+  font-size: 1.8em;
+  font-weight: bold;
   color: ${GRAY};
-  margin: 0;
 `

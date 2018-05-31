@@ -18,7 +18,6 @@ export const ArticleThumbnail = ({ thumbUrl }: Props) => (
 
 const Container = styled.div`
   width: 100%;
-  background-size: contain;
   background-image: url(${props => props.thumbUrl});
   background-size: cover;
   background-color: ${MILK};

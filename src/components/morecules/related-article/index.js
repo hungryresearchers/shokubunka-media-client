@@ -14,7 +14,7 @@ const { GRAY_PALE } = COLORS
 export type Props = {|
   +tags: TagsType,
   +title: string,
-  +articleUrl: string,
+  +id: string,
   +releasedDate: string,
   +name: string,
   +writerImgUrl: string,
@@ -40,7 +40,7 @@ const Tags = ({ tags }: { tags: TagsType }) => (
   </TagsContainer>
 )
 
-export const RelatedArticle = ({ tags, title, articleUrl, releasedDate,
+export const RelatedArticle = ({ tags, title, id, releasedDate,
   name, writerImgUrl, thumbUrl, hasBorder }: Props) => (
   <Container
     className='d-flex justify-content-between'
@@ -55,7 +55,7 @@ export const RelatedArticle = ({ tags, title, articleUrl, releasedDate,
       <TitleContainer>
         <ArticleTitle
           title={title}
-          articleUrl={articleUrl}
+          id={id}
         />
       </TitleContainer>
       <DateWriteNameContaier>
@@ -91,7 +91,7 @@ const TagsContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
-  padding-bottom: 1.7vh;
+  padding-bottom: 1.3vh;
 `
 
 const DateWriteNameContaier = styled.div``

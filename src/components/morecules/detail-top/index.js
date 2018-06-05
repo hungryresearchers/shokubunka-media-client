@@ -62,9 +62,9 @@ const InfoBalloonContainer = styled.div`
 `
 
 const TagsContainer = styled.div`
-  margin-bottom: 1.5em;
+  margin-bottom: 1.8em;
 `
 
 const TitleContainer = styled.div`
-  margin-bottom: 1.3em;
+  margin-bottom: 1.2em;
 `

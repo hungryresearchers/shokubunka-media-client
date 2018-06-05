@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { AuthorImg } from '../../atoms/author-img'
 import { WriterName } from '../../atoms/writer-name'
 
-type Props = {|
+export type Props = {|
   +name: string,
   +imgUrl: string,
   +imgSize?: string,

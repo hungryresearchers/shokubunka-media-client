@@ -17,7 +17,7 @@ export const ArticlesArea = ({ articles }: Props) => (
         articles.map((article, i) => {
           const {
             title,
-            articleUrl,
+            id,
             tags,
             releasedDate,
             isNew,
@@ -33,7 +33,7 @@ export const ArticlesArea = ({ articles }: Props) => (
               <article>
                 <ArticleCard
                   title={title}
-                  articleUrl={articleUrl}
+                  id={id}
                   tags={tags}
                   releasedDate={releasedDate}
                   isNew={isNew}

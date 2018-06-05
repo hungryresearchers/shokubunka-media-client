@@ -10,11 +10,11 @@ const { GRAY } = COLORS
 
 type Props = {|
   +title: string,
-  +articleUrl: string,
+  +id: string,
 |}
 
-export const ArticleTitle = ({ title, articleUrl }: Props) => (
-  <Container to={articleUrl} >
+export const ArticleTitle = ({ title, id }: Props) => (
+  <Container to={`/article/${id}`} >
     <Text>
       { title }
     </Text>

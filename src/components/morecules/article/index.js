@@ -11,7 +11,7 @@ import { WriterInfo } from '../writer-info'
 
 export type Props = {|
   +title: string,
-  +articleUrl: string,
+  +id: string,
   +tags: Tags,
   +releasedDate: string,
   +isNew: boolean,
@@ -20,7 +20,7 @@ export type Props = {|
   +thumbUrl: string,
 |}
 
-const Article = ({ title, articleUrl, tags, releasedDate, isNew,
+const Article = ({ title, id, tags, releasedDate, isNew,
   writerName, imgUrl, thumbUrl } : Props) => (
   <Container>
     <ArticleUpper
@@ -37,7 +37,7 @@ const Article = ({ title, articleUrl, tags, releasedDate, isNew,
       <TitleContainer>
         <ArticleTitle
           title={title}
-          articleUrl={articleUrl}
+          id={id}
         />
       </TitleContainer>
       <WriterInfo

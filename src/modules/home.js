@@ -12,9 +12,9 @@ export function initialize() {
 export type HomeAction =
   | $ReturnType <typeof initialize>
 
-const articleProps = {
+export const articleProps = () => ({
   title: '絶品ハンバーグを食べに行ったら天国だった話',
-  articleUrl: 'https://twitter.com/',
+  id: `${Math.floor(Math.random() * 100 % 19)}`,
   tags: [
     'ハンバーグ',
     '洋食',
@@ -24,16 +24,16 @@ const articleProps = {
   writerName: 'Yoshi Kazuya',
   imgUrl: WRITER_IMG,
   thumbUrl: THUMBNAIL,
-}
+})
 
 const articlesProps = [
-  articleProps,
-  articleProps,
-  articleProps,
-  articleProps,
-  articleProps,
-  articleProps,
-  articleProps,
+  articleProps(),
+  articleProps(),
+  articleProps(),
+  articleProps(),
+  articleProps(),
+  articleProps(),
+  articleProps(),
 ]
 
 const initialState = {

@@ -22,10 +22,10 @@ export const RelatedArticleArea = ({ articles }: Props) => (
           const {
             tags,
             title,
-            articleUrl,
+            id,
             releasedDate,
             name,
-            writerImgUrl,
+            imgUrl,
             thumbUrl,
           } = article
           return (
@@ -33,10 +33,10 @@ export const RelatedArticleArea = ({ articles }: Props) => (
               key={i}
               tags={tags}
               title={title}
-              articleUrl={articleUrl}
+              id={id}
               releasedDate={releasedDate}
               name={name}
-              writerImgUrl={writerImgUrl}
+              writerImgUrl={imgUrl}
               thumbUrl={thumbUrl}
               hasBorder={i !== (articles.length - 1)}
             />

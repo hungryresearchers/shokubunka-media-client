@@ -2,7 +2,7 @@
 import { connect } from 'react-redux'
 import Home from '.'
 
-import { initialize } from '../../..//modules/home'
+import { initialize } from '../../../modules/home'
 
 const mapStateToProps = ({ home }) => {
   return {

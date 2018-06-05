@@ -4,12 +4,14 @@ import styled from 'styled-components'
 import { Header } from '../../organisms/header'
 import { DetailTop } from '../../morecules/detail-top'
 import { ArticleContents } from '../../atoms/article-contents'
+import { RelatedArticleArea } from '../../organisms/related-article-area'
+import { ArticleWriter } from '../../organisms/article-writer'
 
 type Props = {|
   +actions: Object,
 |}
 
-export default class ArticlePage extends PureComponent<Props, void> {
+export default class Article extends PureComponent<Props, void> {
   constructor(props: Props) {
     super()
   }
@@ -19,8 +21,8 @@ export default class ArticlePage extends PureComponent<Props, void> {
   }
 
   render() {
-    const { articlePage, actions } = this.props
-    const { writer, tags, artcielTitle, topImgUrl, releasedDate, articleContents } = article
+    const { article, actions } = this.props
+    const { writer, tags, articleTitle, topImgUrl, releasedDate, articleContents, relatedArticles } = article
     return (
       <Container>
         <Header />
@@ -30,19 +32,30 @@ export default class ArticlePage extends PureComponent<Props, void> {
             name={writer.name}
             onClickInfo={actions.openInfoCard}
             tags={tags}
-            title={artcielTitle}
+            title={articleTitle}
             topImgUrl={topImgUrl}
             releasedDate={releasedDate}
           />
           <ArticleContents>
             { articleContents }
           </ArticleContents>
+          <RelatedArticleArea
+            articles={relatedArticles}
+          />
+          <ArticleWriter
+            writerInfo={writer}
+          />
         </DetailContainer>
       </Container>
     )
   }
 }
 
-const Container = styled.div``
+const Container = styled.div`
+`
 
-const DetailContainer = styled.div``
+const DetailContainer = styled.div`
+  padding: 0 31vw;
+  padding-top: 3vh;
+  padding-bottom: 5vh;
+`

@@ -5,6 +5,7 @@ import { MemoryRouter as Router } from 'react-router-dom'
 import { Header } from './header'
 import { ArticlesArea } from './articles-area'
 import { RelatedArticleArea } from './related-article-area'
+import { ArticleWriter } from './article-writer'
 
 import { COLORS } from '../styles/colors'
 import SARADA_IMG from '../images/mock/sarada.jpg'
@@ -45,6 +46,18 @@ storiesOf('Organisms', module)
       <div style={{padding: '0 30vw'}}>
         <RelatedArticleArea
           articles={articlesProps}
+        />
+      </div>
+    </Router>
+  ))
+  .add('ArticleWriter', () => (
+    <Router>
+      <div style={{padding: '0 30vw'}}>
+        <ArticleWriter
+          writerInfo={{
+            name: 'Yoshi Kazuya',
+            imgUrl: WRITER_IMG,
+          }}
         />
       </div>
     </Router>

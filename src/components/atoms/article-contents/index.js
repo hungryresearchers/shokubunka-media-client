@@ -10,9 +10,9 @@ type Props = {|
 |}
 
 export const ArticleContents = ({ children }: Props) => (
-  <Container>
-    { children }
-  </Container>
+  <Container
+    dangerouslySetInnerHTML={{__html: children}}
+  />
 )
 
 const Container = styled.div`

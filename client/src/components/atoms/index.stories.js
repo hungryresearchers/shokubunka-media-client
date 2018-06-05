@@ -134,7 +134,7 @@ storiesOf('Atoms', module)
       />
     </div>
   ))
-  .add('ShopInfoContainer', () => (
+  .add('', () => (
     <div style={{padding: '0 30vw'}}>
       <ShopInfoColumn
         IconComponent={() => (<ClockIcon/>)}

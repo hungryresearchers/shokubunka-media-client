@@ -14,7 +14,9 @@ storiesOf('Pages', module)
     <Router>
       <div style={{width: '100%', height: '100%', background: MILK}}>
         <Home
-          articles={articlesProps}
+          home={{
+            articles: articlesProps,
+          }}
           actions={{
             initialize: () => {}
           }}

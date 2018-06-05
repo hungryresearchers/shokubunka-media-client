@@ -50,7 +50,7 @@ const Article = ({ title, articleUrl, tags, releasedDate, isNew,
 
 const Container = styled.div`
   widht: 100%;
-  padding: 0 2vw;
+  padding: 0 3vw;
 `
 
 const InfoContainer = styled.div`

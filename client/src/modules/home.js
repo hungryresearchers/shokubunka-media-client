@@ -1,5 +1,6 @@
 // @flow
-
+import THUMBNAIL from '../components/images/mock/sarada.jpg'
+import WRITER_IMG from '../components/images/mock/yoshi.jpg'
 export const INITIALIZE = 'home/initialize'
 
 export function initialize() {
@@ -11,7 +12,33 @@ export function initialize() {
 export type HomeAction =
   | $ReturnType <typeof initialize>
 
-const initialState = {}
+const articleProps = {
+  title: '絶品ハンバーグを食べに行ったら天国だった話',
+  articleUrl: 'https://twitter.com/',
+  tags: [
+    'ハンバーグ',
+    '洋食',
+  ],
+  releasedDate: '2018 7 14',
+  isNew: false,
+  writerName: 'Yoshi Kazuya',
+  imgUrl: WRITER_IMG,
+  thumbUrl: THUMBNAIL,
+}
+
+const articlesProps = [
+  articleProps,
+  articleProps,
+  articleProps,
+  articleProps,
+  articleProps,
+  articleProps,
+  articleProps,
+]
+
+const initialState = {
+  articles: articlesProps
+}
 
 export type HomeState = {}
 

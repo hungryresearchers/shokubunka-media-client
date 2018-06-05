@@ -20,14 +20,15 @@ export const HeaderTitle = () => (
 )
 
 const Container = styled.div`
-  height: 46vh;
+  height: 40vh;
+  min-height: 340px;
   background-image: url(${BACKGROUND_IMG});
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 const TextContainer = styled.div`
-  height: 38vh;
+  margin-top: -4vh;
 `
 
 const zousan = `

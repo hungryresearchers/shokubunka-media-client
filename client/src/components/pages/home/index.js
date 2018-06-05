@@ -13,10 +13,13 @@ const { MILK } = COLORS
 
 type Props = {|
   +actions: Object,
-  +articles: Articles,
+  home: {|
+    +articles: Articles,
+  |},
+  +match: Object,
 |}
 
-export default class Home extends PureComponent<Props, void> {
+export default class HomePage extends PureComponent<Props, void> {
   constructor(props : Props) {
     super()
   }
@@ -26,7 +29,7 @@ export default class Home extends PureComponent<Props, void> {
   }
 
   render() {
-    const { articles } = this.props
+    const { articles } = this.props.home
     return (
       <Container className='container-fluid' >
         <Header />

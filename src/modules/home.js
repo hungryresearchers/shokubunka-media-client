@@ -1,11 +1,17 @@
 // @flow
+import { endpoints } from '../middlewares/callApi'
+
 import THUMBNAIL from '../components/images/mock/sarada.jpg'
 import WRITER_IMG from '../components/images/mock/yoshi.jpg'
+
 export const INITIALIZE = 'home/initialize'
+export const REQUEST_INITIALIZE = 'home/request_initialze'
+export const SUCCESS_INIALIZE = 'home/success_initialize'
 
 export function initialize() {
   return {
     type: INITIALIZE,
+    endpoint: endpoints.HOME_INITIALIZE,
   }
 }
 
@@ -20,7 +26,7 @@ export const articleProps = () => ({
     '洋食',
   ],
   releasedDate: '2018 7 14',
-  isNew: false,
+  isNew: Math.floor(Math.random() * 100) % 2 || false,
   writerName: 'Yoshi Kazuya',
   imgUrl: WRITER_IMG,
   thumbUrl: THUMBNAIL,

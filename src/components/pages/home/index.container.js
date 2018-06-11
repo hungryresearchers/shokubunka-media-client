@@ -4,9 +4,10 @@ import Home from '.'
 
 import { initialize } from '../../../modules/home'
 
-const mapStateToProps = ({ home }) => {
+const mapStateToProps = ({ home, load }) => {
   return {
     home,
+    load,
   }
 }
 

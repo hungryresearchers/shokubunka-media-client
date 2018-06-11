@@ -1,5 +1,6 @@
 // @flow
 export type GetState = () => Object
+export type Dispatch = (a: Action | AsyncAction) => any
 // export type Dispatch = <A>(action: A | Function) => A | Promise<void>
 // export type ThunkAction = (dispatch: Dispatch, getState: GetState) => Promise<void>
 

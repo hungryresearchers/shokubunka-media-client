@@ -1,5 +1,6 @@
 // @flow
 import 'whatwg-fetch'
+import type { Store } from 'redux'
 import { loadStart, loadDone } from '../modules/load'
 
 export const API_ROOT = (process.env.NODE_ENV === 'development') ? '' : ''
@@ -37,7 +38,10 @@ const successActionType = (type: string) => `${type}_SUCCESS`
 
 const failureActionType = (type: string) => `${type}_FAILURE`
 
-export const callApiMiddleware = (store) => next => async(action) => {
+type Next = (action: Function) => void
+
+//	$FlowFixMe (storeがany型なのを治す)
+export const callApiMiddleware = (store: any) => (next: Next) => async(action: any) => {
   const ret = next(action)
 
   const { endpoint } = action

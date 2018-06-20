@@ -7,6 +7,7 @@ import { ArticleContents } from '../../atoms/article-contents'
 import { RelatedArticleArea } from '../../organisms/related-article-area'
 import { ArticleWriter } from '../../organisms/article-writer'
 import { RectangleButton } from '../../atoms/rectangle-button'
+import { ShopInfoArea } from '../../organisms/shop-info-area'
 import { Link } from 'react-router-dom'
 
 type Props = {|
@@ -24,7 +25,8 @@ export default class Article extends PureComponent<Props, void> {
 
   render() {
     const { article, actions } = this.props
-    const { writer, tags, articleTitle, topImgUrl, releasedDate, articleContents, relatedArticles } = article
+    const { writer, tags, articleTitle, topImgUrl, releasedDate, articleContents, relatedArticles,
+      phoneNumber, businessHour, requiredTime, address } = article
     return (
       <Container>
         <Header />
@@ -45,6 +47,14 @@ export default class Article extends PureComponent<Props, void> {
               { articleContents }
             </ArticleContents>
           </ContentsContainer>
+          <ShopInfoContaier>
+            <ShopInfoArea
+              phoneNumber={phoneNumber}
+              businessHour={businessHour}
+              requiredTime={requiredTime}
+              address={address}
+            />
+          </ShopInfoContaier>
           <RelatedArticlesContainer>
             <RelatedArticleArea
               articles={relatedArticles}
@@ -82,6 +92,9 @@ const TopContainer = styled.div`
 
 const ContentsContainer = styled.div`
   margin-bottom: 9vh;
+`
+const ShopInfoContaier = styled.div`
+  margin-bottom: 11vh;
 `
 
 const RelatedArticlesContainer = styled.div`

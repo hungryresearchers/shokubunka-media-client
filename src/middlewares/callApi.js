@@ -40,7 +40,7 @@ const failureActionType = (type: string) => `${type}_FAILURE`
 
 type Next = (action: Function) => void
 
-//	$FlowFixMe (storeがany型なのを治す)
+// $FlowFixMe (storeがany型なのを治す)
 export const callApiMiddleware = (store: any) => (next: Next) => async(action: any) => {
   const ret = next(action)
 

@@ -3,7 +3,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 type Props = {|
-  +IconComponent: () => React$Element<any>,
+  +IconComponent: () => ?React$Element<any>,
   +DescriptionComponent: () => React$Element<any>,
 |}
 

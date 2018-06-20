@@ -13,7 +13,7 @@ type Props = {|
 
 export const PhoneNumber = ({ number }: Props) => (
   <Text
-    className='font-weight-bold m-0 p-0'
+    className='font-weight-bold'
   >
     { number }
   </Text>

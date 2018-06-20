@@ -6,40 +6,81 @@ import { ShopInfoColumn } from '../../atoms/shop-info-column'
 import { PhoneIcon } from '../../atoms/phone-icon'
 import { PhoneNumber } from '../../atoms/phone-number'
 import { ClockIcon } from '../../atoms/clock-icon'
-import { WeeklyText } from '../../atoms/weekly-text'
+import {
+  WeeklyText,
+  type Props as BusinessHour,
+} from '../../atoms/weekly-text'
+import { WalkmanIcon } from '../../atoms/walkman-icon'
+import { RequiredTime } from '../../atoms/required-time'
+import {
+  AddressText,
+  type Props as Address,
+} from '../../atoms/address-text'
 
 type Props = {|
-  +phoneNumber: {
-    +number: string
-  },
+  phoneNumber: string,
+  businessHour: BusinessHour,
+  requiredTime: string,
+  address: Address,
 |}
 
-export const ShopInfoArea = ({ phoneNumber }: Props) => (
+export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address }: Props) => (
   <Container>
-    <TipsHeader
-      title='お店の情報'
-    />
-    <ShopInfoColumn
-      IconComponent={() => (<PhoneIcon />)}
-      DescriptionComponent={() => (
-        <PhoneNumber
-          number={phoneNumber.number}
-        />
-      )}
-    />
-    <ShopInfoColumn
-      IconComponent={() => (<ClockIcon/>)}
-      DescriptionComponent={() =>  (
-        <WeeklyText
-          open={open}
-          close={close}
-          holiday=
-        />
-      )}
-    />
+    <TipsHeaderContainer>
+      <TipsHeader
+        title='お店の情報'
+      />
+    </TipsHeaderContainer>
+    <UpperContainer>
+      <ShopInfoColumn
+        IconComponent={() => (<PhoneIcon />)}
+        DescriptionComponent={() => (
+          <PhoneNumber
+            number={phoneNumber}
+          />
+        )}
+      />
+      <ShopInfoColumn
+        IconComponent={() => (<ClockIcon/>)}
+        DescriptionComponent={() =>  (
+          <WeeklyText
+            open={businessHour.open}
+            close={businessHour.close}
+            holiday={businessHour.holiday}
+          />
+        )}
+      />
+      <ShopInfoColumn
+        IconComponent={() => (<WalkmanIcon />)}
+        DescriptionComponent={() => (
+          <RequiredTime
+            requiredTime={requiredTime}
+          />
+        )}
+      />
+    </UpperContainer>
+    <BottomContaier>
+      <ShopInfoColumn
+        IconComponent={() => (null)}
+        DescriptionComponent={() => (
+          <AddressText
+            address={address.address}
+            postalCode={address.postalCode}
+          />
+        )}
+      />
+    </BottomContaier>
   </Container>
 )
 
 const Container = styled.div`
   width: 100%;
 `
+
+const TipsHeaderContainer = styled.div``
+
+const UpperContainer = styled.div`
+  margin-bottom: 3vh;
+`
+
+const BottomContaier = styled.div``

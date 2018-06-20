@@ -6,6 +6,7 @@ import { Header } from './header'
 import { ArticlesArea } from './articles-area'
 import { RelatedArticleArea } from './related-article-area'
 import { ArticleWriter } from './article-writer'
+import { ShopInfoArea } from './shop-info-area'
 
 import { COLORS } from '../styles/colors'
 import SARADA_IMG from '../images/mock/sarada.jpg'
@@ -57,6 +58,25 @@ storiesOf('Organisms', module)
           writerInfo={{
             name: 'Yoshi Kazuya',
             imgUrl: WRITER_IMG,
+          }}
+        />
+      </div>
+    </Router>
+  ))
+  .add('ShopInfoArea', () => (
+    <Router>
+      <div style={{padding: '0 30vw'}}>
+        <ShopInfoArea
+          phoneNumber='123456789'
+          businessHour={{
+            open: '11:00',
+            close: '23:00',
+            holiday: '木曜',
+          }}
+          requiredTime='15'
+          address={{
+            postalCode: '〒162-0825',
+            address: '東京都新宿区神楽坂３丁目１ 松本ハイツB1F'
           }}
         />
       </div>

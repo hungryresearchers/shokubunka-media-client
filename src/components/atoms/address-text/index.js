@@ -7,7 +7,7 @@ import { FONT_FAMILY } from '../../styles/font-family.css'
 const { GRAY } = COLORS
 const { YUGOTHIC } = FONT_FAMILY
 
-type Props = {|
+export type Props = {|
   postalCode: ?string,
   address: ?string,
 |}

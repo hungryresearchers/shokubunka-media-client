@@ -34,6 +34,17 @@ const initialState = {
     articleProps(),
     articleProps(),
   ],
+  phoneNumber: '123456789',
+  businessHour: {
+    open: '11:00',
+    close: '23:00',
+    holiday: '木',
+  },
+  requiredTime: '15',
+  address: {
+    postalCode: '〒162-0825',
+    address: '東京都新宿区神楽坂３丁目１ 松本ハイツB1F'
+  },
 }
 
 export const reducer = (state: ArticleState = initialState, action: ArticleAction) => {

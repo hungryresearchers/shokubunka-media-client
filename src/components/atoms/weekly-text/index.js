@@ -8,7 +8,7 @@ const { GRAY } = COLORS
 const { AVENIR } = FONT_FAMILY
 
 export type Holiday = string | string[]
-type Props = {|
+export type Props = {|
   +open: string,
   +close: string,
   +holiday: ?Holiday,

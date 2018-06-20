@@ -8,7 +8,7 @@ const { GRAY } = COLORS
 const { AVENIR } = FONT_FAMILY
 
 type Props = {|
-  +requiredTime: number,
+  +requiredTime: string,
 |}
 
 export const RequiredTime = ({ requiredTime }: Props) => (

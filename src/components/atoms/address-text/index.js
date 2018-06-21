@@ -13,19 +13,31 @@ export type Props = {|
 |}
 
 export const AddressText = ({ postalCode, address }: Props) => (
-  <Container>
-    <Text
-      className='font-weight-bold'
-    >
-      { postalCode }
-    </Text>
-    <Text
-      className='font-weight-bold'
-    >
-      { address }
-    </Text>
-  </Container>
+  <LinkToGoogleMap>
+    <Container>
+      <Text
+        className='font-weight-bold'
+      >
+        { postalCode }
+      </Text>
+      <Text
+        className='font-weight-bold'
+      >
+        { address }
+      </Text>
+    </Container>
+  </LinkToGoogleMap>
 )
+
+const LinkToGoogleMap = styled.a.attrs({
+  href: 'https://www.google.co.jp/maps/place/%E3%80%92150-0011+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E6%9D%B1%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%E2%88%92%EF%BC%92%EF%BC%90/',
+  target: '_blank',
+})`
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: ${GRAY};
+  }
+`
 
 const Container = styled.div`
   ${YUGOTHIC};

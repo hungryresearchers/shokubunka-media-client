@@ -8,22 +8,47 @@ import {
   Marker
 } from "react-google-maps"
 
-type LatLng = {
-  latitude: number,
-  longitude: number,
+export type LatLng = {
+  lat: number,
+  lng: number,
 }
 type Props = {
   latlng: LatLng,
-  height: string,
+  size?: number,
 }
 
-export const Map = withScriptjs(withGoogleMap(({ latlng }: Props) =>
+const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
   <GoogleMap
     defaultZoom={15}
     defaultCenter={latlng}
   >
     <Marker
-      postion={latlng}
+      position={latlng}
     />
   </GoogleMap>
 ))
+
+export const Map = ({ latlng, size }: Props) => (
+  <MapContent
+    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGpVNiSjM-eqFHYEGtoV2yf9uGJWOVpT4&v=3.exp&libraries=geometry,drawing,places"
+    loadingElement={
+      <MapElement
+        size={size}
+      />
+    }
+    containerElement = {
+      <MapElement
+        size={size}
+      />
+    }
+    mapElement={
+      <div style={{height: '100%'}} />
+    }
+    latlng={latlng}
+  />
+)
+
+const MapElement = styled.div`
+  height: ${props => props.size || '300px'};
+  width: ${props => props.size || '300px'};
+`

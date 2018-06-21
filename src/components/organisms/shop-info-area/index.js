@@ -16,15 +16,22 @@ import {
   AddressText,
   type Props as Address,
 } from '../../atoms/address-text'
+import {
+  Map,
+  type LatLng,
+} from '../../atoms/map'
 
 type Props = {|
   phoneNumber: string,
   businessHour: BusinessHour,
   requiredTime: string,
-  address: Address,
+  address: {
+    ...Address,
+    latlng: LatLng
+  },
 |}
 
-export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address }: Props) => (
+export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address, latlng }: Props) => (
   <Container>
     <TipsHeaderContainer>
       <TipsHeader
@@ -69,6 +76,17 @@ export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address 
           />
         )}
       />
+      {
+        address.latlng &&
+        <ShopInfoColumn
+          IconComponent={() => (null)}
+          DescriptionComponent={() => (
+            <Map
+              latlng={address.latlng}
+            />
+          )}
+        />
+      }
     </BottomContaier>
   </Container>
 )

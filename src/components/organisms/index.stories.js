@@ -78,6 +78,10 @@ storiesOf('Organisms', module)
             postalCode: '〒162-0825',
             address: '東京都新宿区神楽坂３丁目１ 松本ハイツB1F'
           }}
+          latlng={{
+            lat: 12,
+            lng: 13,
+          }}
         />
       </div>
     </Router>

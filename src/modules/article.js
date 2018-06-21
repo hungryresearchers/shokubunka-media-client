@@ -43,7 +43,11 @@ const initialState = {
   requiredTime: '15',
   address: {
     postalCode: '〒162-0825',
-    address: '東京都新宿区神楽坂３丁目１ 松本ハイツB1F'
+    address: '東京都新宿区神楽坂３丁目１ 松本ハイツB1F',
+    latlng: {
+      lat: 35.7717705,
+      lng: 139.8634296,
+    }
   },
 }
 

@@ -115,26 +115,15 @@ storiesOf('Atoms', module)
   ))
   .add('Map', () => (
     <div>
-      { /* todo */ }
       <Map
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={
-          <div style={{width: '100%'}} />
-        }
-        cotainerElement={
-          <div style={{height: '100px'}} />
-        }
-        mapElement={
-          <div style={{height: '100%'}} />
-        }
         latlng={{
-          latitude: 13,
-          longitude: 12,
+          lat: 35.7717705,
+          lng: 139.8634296,
         }}
       />
     </div>
   ))
-  .add('', () => (
+  .add('営業日', () => (
     <div style={{padding: '0 30vw'}}>
       <ShopInfoColumn
         IconComponent={() => (<ClockIcon/>)}

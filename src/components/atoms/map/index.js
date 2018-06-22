@@ -6,7 +6,7 @@ import {
   withGoogleMap,
   GoogleMap,
   Marker
-} from "react-google-maps"
+} from 'react-google-maps'
 
 export type LatLng = {
   lat: number,

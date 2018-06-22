@@ -67,25 +67,29 @@ export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address,
       />
     </UpperContainer>
     <BottomContaier>
-      <ShopInfoColumn
-        IconComponent={() => (null)}
-        DescriptionComponent={() => (
-          <AddressText
-            address={address.address}
-            postalCode={address.postalCode}
-          />
-        )}
-      />
-      {
-        address.latlng &&
+      <AddressContainer>
         <ShopInfoColumn
           IconComponent={() => (null)}
           DescriptionComponent={() => (
-            <Map
-              latlng={address.latlng}
+            <AddressText
+              address={address.address}
+              postalCode={address.postalCode}
             />
           )}
         />
+      </AddressContainer>
+      {
+        address.latlng &&
+        <MapContainer>
+          <ShopInfoColumn
+            IconComponent={() => (null)}
+            DescriptionComponent={() => (
+              <Map
+                latlng={address.latlng}
+              />
+            )}
+          />
+        </MapContainer>
       }
     </BottomContaier>
   </Container>
@@ -96,6 +100,12 @@ const Container = styled.div`
 `
 
 const TipsHeaderContainer = styled.div``
+
+const AddressContainer = styled.div`
+  margin-bottom: 2vh;
+`
+
+const MapContainer = styled.div``
 
 const UpperContainer = styled.div`
   margin-bottom: 3vh;

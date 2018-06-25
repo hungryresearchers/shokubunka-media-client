@@ -9,7 +9,7 @@ import { DateWriterName } from '../../morecules/date-writer-name'
 
 type Props = {|
   +topImgUrl: string,
-  +onClickInfo: Function,
+  +handleClickInfo: Function,
   +tags: string[],
   +title: string,
   +releasedDate: string,
@@ -17,12 +17,12 @@ type Props = {|
   +name: string,
 |}
 
-export const DetailTop = ({ topImgUrl, onClickInfo, tags, title, releasedDate, imgUrl, name }: Props) => (
+export const DetailTop = ({ topImgUrl, handleClickInfo, tags, title, releasedDate, imgUrl, name }: Props) => (
   <Container>
     <ImgContainer>
       <InfoBalloonContainer>
         <ShopInfoLink
-          onClick={onClickInfo}
+          onClick={handleClickInfo}
         />
       </InfoBalloonContainer>
       <TopImg

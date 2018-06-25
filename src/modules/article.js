@@ -3,11 +3,25 @@ import WRITER_IMG from '../components/images/mock/yoshi.jpg'
 import TOP_IMG from '../components/images/mock/sarada.jpg'
 import { articleProps } from './home'
 
-export const INITIALIZE = 'article/initialize'
+export const INITIALIZED = 'article/initialize'
+export const OPENED_SHOP_INFO_MODAL = 'article/opened_shop_info_modal'
+export const CLOSED_SHOP_INFO_MODAL = 'article/close_shop_info_modal'
 
 export function initialize() {
   return {
-    type: INITIALIZE,
+    type: INITIALIZED,
+  }
+}
+
+export function handleClickInfo() {
+  return {
+    type: OPENED_SHOP_INFO_MODAL,
+  }
+}
+
+export function handleClickModalCloseButton() {
+  return {
+    type: CLOSED_SHOP_INFO_MODAL
   }
 }
 
@@ -49,12 +63,19 @@ const initialState = {
       lng: 139.8634296,
     }
   },
+  isOpenShopInfoModal: false,
 }
 
 export const reducer = (state: ArticleState = initialState, action: ArticleAction) => {
   switch (action.type) {
-    case INITIALIZE: {
+    case INITIALIZED: {
       return state
+    }
+    case OPENED_SHOP_INFO_MODAL: {
+      return { ...state, isOpenShopInfoModal: true }
+    }
+    case CLOSED_SHOP_INFO_MODAL: {
+      return { ...state, isOpenShopInfoModal: false }
     }
     default: {
       return state

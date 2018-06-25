@@ -12,15 +12,19 @@ type Props = {|
   +onClick: Function,
   +BGColor?: string,
   +color?: string,
+  +containerStyle?: Object,
+  +textStyle?: Object,
 |}
 
-export const RectangleButton = ({ text, BGColor, color, onClick }: Props) => (
+export const RectangleButton = ({ text, BGColor, color, onClick, containerStyle, textStyle, }: Props) => (
   <Container
     className='text-center'
     onClick={onClick}
+    style={containerStyle}
   >
     <Text
       className='m-0 p-0'
+      style={textStyle}
     >
       { text }
     </Text>

@@ -2,7 +2,11 @@
 import { connect } from 'react-redux'
 import Article from '.'
 
-import { initialize } from '../../../modules/article'
+import {
+  initialize,
+  handleClickInfo,
+  handleClickModalCloseButton,
+} from '../../../modules/article'
 
 const mapStateToProps = ({ article }) => {
   return {
@@ -15,6 +19,12 @@ const mapDispatchToProps = (dispatch: Function) => ({
     initialize() {
       dispatch(initialize())
     },
+    handleClickInfo() {
+      dispatch(handleClickInfo())
+    },
+    handleClickModalCloseButton() {
+      dispatch(handleClickModalCloseButton())
+    }
   },
 })
 

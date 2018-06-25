@@ -14,7 +14,7 @@ export type LatLng = {
 }
 type Props = {
   latlng: LatLng,
-  size?: number,
+  size?: string,
 }
 
 const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>

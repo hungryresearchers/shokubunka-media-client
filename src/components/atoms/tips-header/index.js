@@ -1,10 +1,11 @@
 // @flow
 import React from 'react'
 import styled from 'styled-components'
+import { TwoStepBorder as BottomBorder } from './two-step-border'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILY } from '../../styles/font-family.css'
 
-const { GRAY_PALE, GRAY } = COLORS
+const { GRAY } = COLORS
 const { YUGOTHIC } = FONT_FAMILY
 
 type Props = {|
@@ -34,8 +35,4 @@ const Title = styled.h2`
   padding-bottom: 2vh;
   border-bottom: 0.3em solid #dcdcdb;
   margin-bottom: 0.15em;
-`
-
-const BottomBorder = styled.hr`
-  border-top: 0.15em solid ${GRAY_PALE};
 `

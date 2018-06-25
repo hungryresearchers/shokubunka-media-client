@@ -21,7 +21,7 @@ import {
   type LatLng,
 } from '../../atoms/map'
 
-type Props = {|
+export type Props = {|
   phoneNumber: string,
   businessHour: BusinessHour,
   requiredTime: string,
@@ -30,6 +30,8 @@ type Props = {|
     latlng: LatLng
   },
 |}
+
+export const SHOP_INFO_MAP_SIZE = '300px'
 
 export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address, latlng }: Props) => (
   <Container>
@@ -86,6 +88,7 @@ export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address,
             DescriptionComponent={() => (
               <Map
                 latlng={address.latlng}
+                size="300px"
               />
             )}
           />

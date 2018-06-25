@@ -4,14 +4,14 @@ import { endpoints } from '../middlewares/callApi'
 import THUMBNAIL from '../components/images/mock/sarada.jpg'
 import WRITER_IMG from '../components/images/mock/yoshi.jpg'
 
-export const INITIALIZE = 'home/initialize'
-export const REQUEST_INITIALIZE = 'home/request_initialze'
+export const INITIALIZED = 'home/initialize'
+export const REQUEST_INITIALIZED = 'home/request_initialze'
 export const SUCCESS_INIALIZE = 'home/success_initialize'
 
 export function initialize() {
   return {
-    type: INITIALIZE,
-    endpoint: endpoints.HOME_INITIALIZE,
+    type: INITIALIZED,
+    endpoint: endpoints.HOME_INITIALIZED,
   }
 }
 
@@ -50,7 +50,7 @@ export type HomeState = {}
 
 export const reducer = (state: HomeState = initialState, action: HomeAction) => {
   switch (action.type) {
-    case INITIALIZE: {
+    case INITIALIZED: {
       return state
     }
     default: {

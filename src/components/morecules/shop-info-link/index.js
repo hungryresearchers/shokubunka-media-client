@@ -22,7 +22,9 @@ export const ShopInfoLink = ({ onClick }: Props) => (
   </Container>
 )
 
-const Container = styled.div``
+const Container = styled.div`
+  cursor: pointer;
+`
 
 const BalloonContainer = styled.div`
   margin-top: 0.7em;

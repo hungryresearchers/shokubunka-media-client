@@ -9,6 +9,7 @@ import { ArticleWriter } from '../../organisms/article-writer'
 import { RectangleButton } from '../../atoms/rectangle-button'
 import { ShopInfoArea } from '../../organisms/shop-info-area'
 import { Link } from 'react-router-dom'
+import { ShopDetailModal } from '../../organisms/shop-detail-modal'
 
 type Props = {|
   +actions: Object,
@@ -26,16 +27,24 @@ export default class Article extends PureComponent<Props, void> {
   render() {
     const { article, actions } = this.props
     const { writer, tags, articleTitle, topImgUrl, releasedDate, articleContents, relatedArticles,
-      phoneNumber, businessHour, requiredTime, address } = article
+      phoneNumber, businessHour, requiredTime, address, isOpenShopInfoModal } = article
     return (
       <Container>
+        <ShopDetailModal
+          phoneNumber={phoneNumber}
+          businessHour={businessHour}
+          requiredTime={requiredTime}
+          address={address}
+          handleClickModalCloseButton={actions.handleClickModalCloseButton}
+          isOpen={isOpenShopInfoModal}
+        />
         <Header />
         <DetailContainer>
           <TopContainer>
             <DetailTop
               imgUrl={writer.imgUrl}
               name={writer.name}
-              onClickInfo={actions.openInfoCard}
+              handleClickInfo={actions.handleClickInfo}
               tags={tags}
               title={articleTitle}
               topImgUrl={topImgUrl}

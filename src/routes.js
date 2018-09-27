@@ -14,7 +14,7 @@ const Routes = () => (
   <ConnectedRouter history={history}>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/article/:id" component={Article} />
+      <Route exact path="/article/:id"  component={Article} />
       <Route component={() => (<div>404</div>)} />
     </Switch>
   </ConnectedRouter>

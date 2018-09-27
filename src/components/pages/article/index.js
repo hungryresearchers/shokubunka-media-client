@@ -21,7 +21,8 @@ export default class Article extends PureComponent<Props, void> {
   }
 
   componentDidMount() {
-    this.props.actions.initialize()
+    const { id } = this.props.match.params
+    this.props.actions.initialize(parseInt(id, 10))
   }
 
   render() {

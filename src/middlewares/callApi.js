@@ -3,11 +3,13 @@ import 'whatwg-fetch'
 import type { Store } from 'redux'
 import { loadStart, loadDone } from '../modules/load'
 
-export const API_ROOT = (process.env.NODE_ENV === 'development') ? '' : ''
+export const API_ROOT = (process.env.NODE_ENV === 'development')
+  ? 'http://localhost:8888'
+  : ''
 
 export const endpoints = {
-  HOME_INITIALIZE: 'https://api.github.com/users/yasuno0327',
-  ARTICLE_INITIALIZE: 'article_initialize'
+  HOME_INITIALIZE: '/wp-json/wp/v2/articles',
+  ARTICLE_INITIALIZE: (id: number) => `/wp-json/wp/v2/articles/${id}`,
 }
 
 function checkStatus({ status }: { status: number }) {
@@ -18,25 +20,25 @@ function requestResponse(type: string) {
   return { type }
 }
 
-function successResponse(type: string, response: Object) {
+export function successResponse(type: string, response: Object) {
   return {
     type,
     response,
   }
 }
 
-function failureResponse(type: string, error: ?Object) {
+export function failureResponse(type: string, error: ?Object) {
   return {
     type,
     error,
   }
 }
 
-const requestActionType = (type: string) => `${type}_REQUEST`
+const requestActionType = (type: string) => `${type}_request`
 
-const successActionType = (type: string) => `${type}_SUCCESS`
+const successActionType = (type: string) => `${type}_success`
 
-const failureActionType = (type: string) => `${type}_FAILURE`
+const failureActionType = (type: string) => `${type}_failure`
 
 type Next = (action: Function) => void
 
@@ -45,7 +47,7 @@ export const callApiMiddleware = (store: any) => (next: Next) => async(action: a
   const ret = next(action)
 
   const { endpoint } = action
-  if (endpoint != null && typeof endpoint === 'string') {
+  if (endpoint != null) {
     const dispatch = store.dispatch.bind(store)
     const ACTION_TYPE = action.type
 
@@ -62,7 +64,7 @@ export const callApiMiddleware = (store: any) => (next: Next) => async(action: a
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(params)
+        // body: JSON.stringify(params)
       }
     )
 

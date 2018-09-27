@@ -16,8 +16,8 @@ const mapStateToProps = ({ article }) => {
 
 const mapDispatchToProps = (dispatch: Function) => ({
   actions: {
-    initialize() {
-      dispatch(initialize())
+    initialize(id: number) {
+      dispatch(initialize(id))
     },
     handleClickInfo() {
       dispatch(handleClickInfo())

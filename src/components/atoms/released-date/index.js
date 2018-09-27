@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { formatReleasedDate } from '../../../utils'
 
 const { YUGOTHIC } = FONT_FAMILY
 
@@ -14,7 +15,7 @@ export const ReleasedDate = ({ releasedDate, fontSize }: Props) => (
   <Text
     fontSize={fontSize}
   >
-    { releasedDate }
+    { formatReleasedDate(releasedDate) }
   </Text>
 )
 

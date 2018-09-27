@@ -25,11 +25,14 @@ export const DetailTop = ({ topImgUrl, handleClickInfo, tags, title, releasedDat
           onClick={handleClickInfo}
         />
       </InfoBalloonContainer>
+      {
+        topImgUrl &&
       <TopImg
         imgUrl={topImgUrl}
         imgWidth='100%'
         imgHeight='calc(35vw * 0.73)'
       />
+      }
     </ImgContainer>
     <TagsContainer>
       <DetailTags

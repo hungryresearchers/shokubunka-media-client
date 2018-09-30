@@ -30,7 +30,7 @@ const Container = styled.div`
   background-size: cover;
 
   @media ${media.small} {
-    padding-top: 40px;
+    padding-top: 33px;
     height: auto;
     min-height: auto;
     background: none;
@@ -54,6 +54,7 @@ const zousan = `
 
   @media ${media.small} {
     text-shadow: none;
+    margin-bottom : 6px;
     color: ${ORANGE};
   }
 `

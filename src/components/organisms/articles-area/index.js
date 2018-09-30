@@ -13,6 +13,9 @@ type Props = {
 }
 
 export const ArticlesArea = ({ articles }: Props) => {
+  if (articles[0] == null) {
+    return null
+  }
   const headerArticle = articles[0]
   return (
     <section>
@@ -64,7 +67,7 @@ export const ArticlesArea = ({ articles }: Props) => {
 
 const Container = styled.div`
   @media ${media.small} {
-    padding: 0 10px;
+    margin: 0;
   }
 `
 

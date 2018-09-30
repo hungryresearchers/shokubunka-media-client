@@ -46,17 +46,18 @@ export default class HomePage extends PureComponent<Props, void> {
 
 const Container = styled.div`
   padding: 0;
+  min-height: 100vh;
   background-color: ${MILK};
 `
 
 const ContentsContainer = styled.div`
-  padding-top: 13vh;
 
   @media ${media.medium} {
     padding: 0 4.5vw;
+    padding-top: 13vh;
   }
 
   @media ${media.small} {
-    padding-top: 10vh;
+    padding-top: 53px;
   }
 `

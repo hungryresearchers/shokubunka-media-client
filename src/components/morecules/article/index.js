@@ -74,11 +74,14 @@ const ArticleContainer = styled.div`
     }
 
     &:nth-child(odd) {
-      padding-left: 10px;
+      padding-right: 10px;
+      padding-left: 7px;
     }
 
     &:nth-child(even) {
-      padding-right: 10px;
+      padding-right: 7px;
+      padding-left: 10px;
+    }
     }
 
   }

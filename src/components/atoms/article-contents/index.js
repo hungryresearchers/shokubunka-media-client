@@ -23,8 +23,8 @@ const Container = styled.div`
   text-align: justify;
   color: rgb(45, 45, 42);
 
-  & > img {
-    width: 100%;
+  & img {
+    max-width: 100%;
   }
   @media ${media.small} {
     font-size: 0.972em;

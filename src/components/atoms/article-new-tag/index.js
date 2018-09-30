@@ -2,8 +2,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { COLORS } from '../../styles/colors'
+import { media } from '../../../utils/styles'
 
-const { OBLIQUE } = FONT_FAMILY
+const { OBLIQUE, AVENIR } = FONT_FAMILY
+const { ORANGE } = COLORS
 
 export const ArticleNewTag = () => (
   <Container>
@@ -15,17 +18,28 @@ export const ArticleNewTag = () => (
 
 const Container = styled.div`
   position: absolute;
-  background-color: rgba(232, 92, 63, 1);
+  background-color: ${ORANGE};
   top: 20%;
   padding: 0.4em 1.5em;
   padding-left: 3em;
+
+  @media ${media.small} {
+    padding: 0.5em 2.1em;
+    padding-left: 3.7em;
+  }
 `
 
 const Text = styled.p`
   font-size: 1.2em;
   color: white;
+  font-style: oblique;
   font-weight: 600;
-  ${OBLIQUE}
+  ${AVENIR}
   padding: 0;
   margin: 0;
+
+  @media ${media.small} {
+    font-size: 1.4em;
+    font-weight: 900;
+  }
 `

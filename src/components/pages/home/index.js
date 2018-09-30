@@ -8,6 +8,7 @@ import {
   type Articles
 } from '../../organisms/articles-area'
 import { COLORS } from '../../styles/colors'
+import { media } from '../../../utils/styles'
 
 const { MILK } = COLORS
 
@@ -16,7 +17,6 @@ type Props = {|
   home: {|
     +articles: Articles,
   |},
-  +match: Object,
 |}
 
 export default class HomePage extends PureComponent<Props, void> {
@@ -50,6 +50,13 @@ const Container = styled.div`
 `
 
 const ContentsContainer = styled.div`
-  padding: 0 4.5vw;
   padding-top: 13vh;
+
+  @media ${media.medium} {
+    padding: 0 4.5vw;
+  }
+
+  @media ${media.small} {
+    padding-top: 10vh;
+  }
 `

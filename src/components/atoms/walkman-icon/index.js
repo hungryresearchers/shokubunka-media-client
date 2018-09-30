@@ -3,7 +3,7 @@ import React from 'react'
 
 export const WalkmanIcon = () => (
   <svg
-    width='15'
+    width='23'
     height='25'
     viewBox='0 0 15 25'
     xmlns='http://www.w3.org/2000/svg'

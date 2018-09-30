@@ -22,19 +22,26 @@ export type HomeAction =
 
 export const articleProps = () => ({
   title: '絶品ハンバーグを食べに行ったら天国だった話',
-  id: `${Math.floor(Math.random() * 100 % 19)}`,
+  id: `${Math.floor(Math.random() * 100 % 50)}`,
   tags: [
     'ハンバーグ',
     '洋食',
   ],
   releasedDate: new Date(),
-  isNew: Math.floor(Math.random() * 100) % 2 || false,
+  // isNew: Math.floor(Math.random() * 100) % 2 || false,
+  isNew: true,
   writerName: 'Yoshi Kazuya',
   imgUrl: WRITER_IMG,
   thumbUrl: THUMBNAIL,
 })
 
-const articlesProps = []
+const articlesProps = [
+  articleProps(),
+  articleProps(),
+  articleProps(),
+  articleProps(),
+  articleProps(),
+]
 
 const initialState = {
   articles: articlesProps
@@ -52,7 +59,8 @@ function whenSuccessInitialize(state: HomeState, response: Array<any>) {
     writerName: writer.name,
     isNew: new Date(releasedDate).getDate() - today.getDate() < 3
   }))
-  return { ...state, articles }
+  // return { ...state, articles }
+  return state
 }
 
 export type HomeState = {}

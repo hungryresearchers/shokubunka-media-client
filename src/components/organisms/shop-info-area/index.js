@@ -20,6 +20,7 @@ import {
   Map,
   type LatLng,
 } from '../../atoms/map'
+import { media } from '../../../utils/styles'
 
 export type Props = {|
   phoneNumber: string,
@@ -89,6 +90,7 @@ export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address,
               <Map
                 latlng={address.latlng}
                 size="300px"
+                mobileSize='250px'
               />
             )}
           />
@@ -102,7 +104,11 @@ const Container = styled.div`
   width: 100%;
 `
 
-const TipsHeaderContainer = styled.div``
+const TipsHeaderContainer = styled.div`
+  @media ${media.small} {
+    margin-bottom: 25px;
+  }
+`
 
 const AddressContainer = styled.div`
   margin-bottom: 2vh;

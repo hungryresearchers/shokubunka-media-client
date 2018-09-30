@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { media } from '../../../utils/styles'
 
 const { GRAY } = COLORS
 const { YUGOTHIC } = FONT_FAMILY
@@ -48,6 +49,11 @@ const Container = styled.div`
   font-size: 0.8em;
   letter-spacing: 0.8px;
   line-height: 1.8em;
+
+  @media ${media.small} {
+    font-size: 0.7em;
+    letter-spacing: 0.7px;
+  }
 `
 
 const Text = styled.div``

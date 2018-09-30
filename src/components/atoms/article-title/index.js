@@ -4,18 +4,25 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FONT_FAMILY } from '../../styles/font-family.css'
 import { COLORS } from '../../styles/colors'
+import { media } from '../../../utils/styles'
 
-const { YUGOTHIC } = FONT_FAMILY
+const { YUGOTHIC, TOPPANBUNKYU } = FONT_FAMILY
 const { GRAY } = COLORS
 
 type Props = {|
   +title: string,
   +id: string,
+  color?: string,
+  textStyle?: Object,
+  header?: boolean
 |}
 
-export const ArticleTitle = ({ title, id }: Props) => (
-  <Container to={`/article/${id}`} >
-    <Text>
+export const ArticleTitle = ({ title, id, color, textStyle, header }: Props) => (
+  <Container to={`/article/${id}`} header={header} >
+    <Text
+      color={color}
+      style={textStyle}
+    >
       { title }
     </Text>
   </Container>
@@ -25,8 +32,12 @@ const Container = styled(Link)`
   text-align: left;
 
   &:hover {
-    text-decoration: underline;
-    text-decoration-color: ${GRAY};
+  ${props => props.header ? `
+      text-decoration: none;
+  ` : `
+      text-decoration: underline;
+      text-decoration-color: ${GRAY};
+  `}
   }
 `
 
@@ -36,5 +47,12 @@ const Text = styled.h2`
   font-weight: bold;
   letter-spacing: 0.04em;
   line-height: 1.3em;
-  color: ${GRAY};
+  color: ${props => props.color || GRAY};
+
+  @media ${media.small} {
+    ${TOPPANBUNKYU}
+    font-weight: 800;
+    font-size: 0.85em;
+    margin-bottom: 0;
+  }
 `

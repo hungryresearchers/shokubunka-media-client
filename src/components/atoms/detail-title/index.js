@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FONT_FAMILY } from '../../styles/font-family.css'
 import { COLORS } from '../../styles/colors'
+import { media } from '../../../utils/styles'
 
 const { YUGOTHIC } = FONT_FAMILY
 const { GRAY } = COLORS
@@ -23,4 +24,8 @@ const Text = styled.h1`
   font-size: 1.8em;
   font-weight: bold;
   color: ${GRAY};
+
+  @media ${media.small} {
+    font-size: 1.7em;
+  }
 `

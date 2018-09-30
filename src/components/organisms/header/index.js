@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
+import { media } from '../../../utils/styles'
 
 import { HeaderIcon } from '../../atoms/header-icon'
 import { HeaderNavs } from '../../morecules/header-navs'
@@ -9,7 +10,7 @@ import { HeaderNavs } from '../../morecules/header-navs'
 const { ORANGE } = COLORS
 
 export const Header = () => (
-  <header>
+  <Head>
     <Container
       className='d-flex align-items-center justify-content-between'
     >
@@ -22,8 +23,14 @@ export const Header = () => (
         <HeaderNavs />
       </NavsContainer>
     </Container>
-  </header>
+  </Head>
 )
+
+const Head = styled.header`
+  @media ${media.small} {
+    display: none;
+  }
+`
 
 const Container = styled.div`
   width: 100%;

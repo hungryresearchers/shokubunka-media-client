@@ -12,6 +12,7 @@ import { CloseIcon } from '../../atoms/close-icon'
 import { COLORS } from '../../styles/colors'
 import { ShopInfoColumn } from '../../atoms/shop-info-column'
 import { TwoStepBorder } from '../../atoms/tips-header/two-step-border'
+import { media } from '../../../utils/styles'
 
 const { WHITE_085, ORANGE, GRAY_PALE, } = COLORS
 
@@ -29,6 +30,7 @@ export const ShopDetailModal = ({ isOpen, phoneNumber, businessHour, requiredTim
       overlay: {
         zIndex: 9999,
         display: 'overflow',
+        margin: 0
       },
       content: {
         border: `3px solid ${ORANGE}`,

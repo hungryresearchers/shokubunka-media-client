@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { TwoStepBorder as BottomBorder } from './two-step-border'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { media } from '../../../utils/styles'
 
 const { GRAY } = COLORS
 const { YUGOTHIC } = FONT_FAMILY
@@ -35,4 +36,9 @@ const Title = styled.h2`
   padding-bottom: 2vh;
   border-bottom: 0.3em solid #dcdcdb;
   margin-bottom: 0.15em;
+
+  @media ${media.small} {
+    border-bottom: 0.2em solid #dcdcdb;
+    padding-bottom: 0.9em;
+  }
 `

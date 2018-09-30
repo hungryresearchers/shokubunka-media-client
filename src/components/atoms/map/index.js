@@ -7,6 +7,7 @@ import {
   GoogleMap,
   Marker
 } from 'react-google-maps'
+import { media } from '../../../utils/styles'
 
 export type LatLng = {
   lat: number,
@@ -15,6 +16,7 @@ export type LatLng = {
 type Props = {
   latlng: LatLng,
   size?: string,
+  mobileSize?: string,
 }
 
 const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
@@ -28,17 +30,19 @@ const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
   </GoogleMap>
 ))
 
-export const Map = ({ latlng, size }: Props) => (
+export const Map = ({ latlng, size, mobileSize }: Props) => (
   <MapContent
     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGpVNiSjM-eqFHYEGtoV2yf9uGJWOVpT4&v=3.exp&libraries=geometry,drawing,places"
     loadingElement={
       <MapElement
         size={size}
+        mobileSize={mobileSize}
       />
     }
     containerElement = {
       <MapElement
         size={size}
+        mobileSize={mobileSize}
       />
     }
     mapElement={
@@ -51,4 +55,11 @@ export const Map = ({ latlng, size }: Props) => (
 const MapElement = styled.div`
   height: ${props => props.size || '300px'};
   width: ${props => props.size || '300px'};
+
+  ${props => props.mobileSize && `
+    @media ${media.small} {
+      height: ${props.mobileSize};
+      width: ${props.mobileSize};
+    }
+  `}
 `

@@ -36,45 +36,35 @@ export type ArticleState = {}
 
 const initialState = {
   writer: {
-    // name: 'Yoshi Kazuya',
-    // imgUrl: WRITER_IMG,
+    name: 'Yoshi Kazuya',
+    imgUrl: WRITER_IMG,
   },
   tags: [
-    // 'うまい',
-    // 'ハンバーグ'
+    'うまい',
+    'ハンバーグ'
   ],
-  articleTitle: '',
-  // '絶品ハンバーグを食べに行ったら天国な話',
-  topImgUrl: '',
-  // TOP_IMG,
-  releasedDate: null,
-  // '2018 02.10',
-  articleContents: '',
-  // `<p>業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' /><p><br/>業務スーパーの冷凍食品で『 デミハンバーグ』 という商品はご存知でしょうか。 定番おかずのハンバーグは業務スーパーでも種類豊富ですが、 その中でも本品は1個当たり約57 .2 円という格安ぶり！　 ソース付きハンバーグとしては最安クラスに入る一品ではないかと。 正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' />`,
+  articleTitle: '絶品ハンバーグを食べに行ったら天国な話',
+  topImgUrl: TOP_IMG,
+  releasedDate: '2018 02.10',
+  articleContents: `<p>業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' /><p><br/>業務スーパーの冷凍食品で『 デミハンバーグ』 という商品はご存知でしょうか。 定番おかずのハンバーグは業務スーパーでも種類豊富ですが、 その中でも本品は1個当たり約57 .2 円という格安ぶり！　 ソース付きハンバーグとしては最安クラスに入る一品ではないかと。 正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' />`,
   relatedArticles: [
     articleProps(),
     articleProps(),
     articleProps(),
   ],
-  phoneNumber: '',
-  // '123456789',
+  phoneNumber: '123456789',
   businessHour: {
-    open: '',
-    // '11:00',
-    close: '',
-    // '23:00',
-    holiday: '',
-    // '木',
+    open: '11:00',
+    close: '23:00',
+    holiday: '木',
   },
-  requiredTime: '',
+  requiredTime: '15',
   address: {
-    postalCode: '',
-    address: '',
+    postalCode: '〒123-1233',
+    address: '家',
     latlng: {
-      lat: null,
-      // 35.7717705,
-      lng: null
-      // 139.8634296,
+      lat: 35.7717705,
+      lng: 139.8634296,
     }
   },
   isOpenShopInfoModal: false,

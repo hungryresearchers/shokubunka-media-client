@@ -3,8 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { FONT_FAMILY } from '../../styles/font-family.css'
 import BACKGROUND_IMG from '../../images/top-background.jpg'
+import { media } from '../../../utils/styles'
+import { COLORS } from '../../styles/colors'
 
 const { ZOUSAN } = FONT_FAMILY
+const { ORANGE } = COLORS
 
 export const HeaderTitle = () => (
   <Container className='d-flex align-items-center justify-content-center'>
@@ -25,10 +28,20 @@ const Container = styled.div`
   background-image: url(${BACKGROUND_IMG});
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media ${media.small} {
+    padding-top: 40px;
+    height: auto;
+    min-height: auto;
+    background: none;
+  }
 `
 
 const TextContainer = styled.div`
   margin-top: -4vh;
+  @media ${media.small} {
+    margin-top: auto;
+  }
 `
 
 const zousan = `
@@ -38,14 +51,19 @@ const zousan = `
   margin-bottom : 1vh;
   color: #fdeec2;
   text-shadow : 2px 5px 0px #F04220;
+
+  @media ${media.small} {
+    text-shadow: none;
+    color: ${ORANGE};
+  }
 `
 
 const TitleUpper = styled.h1`
   ${zousan}
-  font-size: 6em;
+  font-size: 4em;
 `
 
 const TitleBottom = styled.h2`
   ${zousan}
-  font-size: 4em;
+  font-size: 3em;
 `

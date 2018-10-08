@@ -17,22 +17,25 @@ type Props = {|
   header?: boolean
 |}
 
-export const ArticleTitle = ({ title, id, color, textStyle, header }: Props) => (
-  <Container to={`/article/${id}`} header={header} >
-    <Text
-      color={color}
-      style={textStyle}
-    >
-      { title }
-    </Text>
-  </Container>
-)
+export const ArticleTitle = ({ title, id, color, textStyle, header }: Props) => {
+  const ContainerElm = header ? `div` : Container
+  return (
+    <ContainerElm to={`/article/${id}`} header={header ? 1 : 0} >
+      <Text
+        color={color}
+        style={textStyle}
+      >
+        { title }
+      </Text>
+    </ContainerElm>
+  )
+}
 
 const Container = styled(Link)`
   text-align: left;
 
   &:hover {
-  ${props => props.header ? `
+  ${props => props._header ? `
       text-decoration: none;
   ` : `
       text-decoration: underline;

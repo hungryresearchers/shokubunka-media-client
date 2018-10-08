@@ -8,7 +8,7 @@ import {
   type Props as ShopInfoProps,
 } from '../shop-info-area'
 import { RectangleButton } from '../../atoms/rectangle-button'
-import { CloseIcon } from '../../atoms/close-icon'
+import CloseIcon from '../../atoms/close-icon'
 import { COLORS } from '../../styles/colors'
 import { ShopInfoColumn } from '../../atoms/shop-info-column'
 import { TwoStepBorder } from '../../atoms/tips-header/two-step-border'
@@ -34,10 +34,15 @@ export const ShopDetailModal = ({ isOpen, phoneNumber, businessHour, requiredTim
       },
       content: {
         border: `3px solid ${ORANGE}`,
-        margin: '0 auto',
-        padding: '10vh 6vw',
-        width: '53vw',
-        minHeight: '763px',
+        margin: 'auto auto',
+        padding: '9vh 6vw',
+        // width: '53vw',
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
+        maxWidth: '760px',
+        maxHeight: '860px',
         position: 'absolute',
         zIndex: 999999,
         backgroundColor: WHITE_085,
@@ -103,6 +108,11 @@ const ModalHeader = styled.div`
   position: absolute;
   top: 2vw;
   right: 2vw;
+
+  @media ${media.small} {
+    top: 1.6rem;
+    right: 1.6rem;
+  }
 `
 
 const ShopInfoAreaContainer = styled.div``

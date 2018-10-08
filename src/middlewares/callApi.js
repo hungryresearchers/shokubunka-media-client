@@ -4,7 +4,7 @@ import type { Store } from 'redux'
 import { loadStart, loadDone } from '../modules/load'
 
 export const API_ROOT = (process.env.NODE_ENV === 'development')
-  ? 'http://localhost:8888'
+  ? 'http://35.209.3.52'
   : ''
 
 export const endpoints = {

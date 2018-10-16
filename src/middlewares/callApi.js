@@ -4,8 +4,8 @@ import type { Store } from 'redux'
 import { loadStart, loadDone } from '../modules/load'
 
 export const API_ROOT = (process.env.NODE_ENV === 'development')
-  ? 'http://35.209.3.52'
-  : ''
+  ? process.env.REACT_APP_DEV_API_ROOT
+  : process.env.REACT_APP_PROD_API_ROOT
 
 export const endpoints = {
   HOME_INITIALIZE: '/wp-json/wp/v2/articles',
@@ -43,7 +43,7 @@ const failureActionType = (type: string) => `${type}_failure`
 type Next = (action: Function) => void
 
 // $FlowFixMe (storeがany型なのを治す)
-export const callApiMiddleware = (store: any) => (next: Next) => async(action: any) => {
+export const callApiMiddleware = (store: Store) => (next: Next) => async(action: any) => {
   const ret = next(action)
 
   const { endpoint } = action
@@ -54,7 +54,7 @@ export const callApiMiddleware = (store: any) => (next: Next) => async(action: a
     dispatch(requestResponse(requestActionType(ACTION_TYPE)))
     dispatch(loadStart())
 
-    const { params } = action
+    // const { params } = action
     const response = await fetch(
       API_ROOT + endpoint,
       {
@@ -62,7 +62,7 @@ export const callApiMiddleware = (store: any) => (next: Next) => async(action: a
         // github apiをモックで叩くためにgetにしてるだけ
         // method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json;'
         },
         // body: JSON.stringify(params)
       }

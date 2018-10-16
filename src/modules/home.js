@@ -36,11 +36,11 @@ export const articleProps = () => ({
 })
 
 const articlesProps = [
-  articleProps(),
-  articleProps(),
-  articleProps(),
-  articleProps(),
-  articleProps(),
+  // articleProps(),
+  // articleProps(),
+  // articleProps(),
+  // articleProps(),
+  // articleProps(),
 ]
 
 const initialState = {
@@ -59,8 +59,8 @@ function whenSuccessInitialize(state: HomeState, response: Array<any>) {
     writerName: writer.name,
     isNew: new Date(releasedDate).getDate() - today.getDate() < 3
   }))
-  // return { ...state, articles }
-  return state
+  return { ...state, articles }
+  // return state
 }
 
 export type HomeState = {}

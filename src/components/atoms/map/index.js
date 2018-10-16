@@ -32,7 +32,7 @@ const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
 
 export const Map = ({ latlng, size, mobileSize }: Props) => (
   <MapContent
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGpVNiSjM-eqFHYEGtoV2yf9uGJWOVpT4&v=3.exp&libraries=geometry,drawing,places"
+    googleMapURL={process.env.REACT_APP_GOOGLE_MAP_URL}
     loadingElement={
       <MapElement
         size={size}

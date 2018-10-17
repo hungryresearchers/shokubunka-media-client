@@ -3,7 +3,7 @@ import 'whatwg-fetch'
 import type { Store } from 'redux'
 import { loadStart, loadDone } from '../modules/load'
 
-export const API_ROOT = (process.env.NODE_ENV !== 'development')
+export const API_ROOT = (process.env.NODE_ENV === 'development')
   ? process.env.REACT_APP_DEV_API_ROOT
   : process.env.REACT_APP_PROD_API_ROOT
 

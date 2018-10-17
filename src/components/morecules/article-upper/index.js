@@ -34,7 +34,7 @@ const Contaier = styled.div`
 `
 
 const NewTagContainer = styled.div`
-  top: 19%;
+  top: 13%;
   left: -23px;
   position: absolute;
 

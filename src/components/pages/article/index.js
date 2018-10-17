@@ -14,16 +14,18 @@ import { media } from '../../../utils/styles'
 
 type Props = {|
   +actions: Object,
+  match: any,
+  article: Object,
 |}
 
 export default class Article extends PureComponent<Props, void> {
-  constructor(props: Props) {
-    super()
-  }
-
   componentDidMount() {
     const { id } = this.props.match.params
     this.props.actions.initialize(parseInt(id, 10))
+  }
+
+  componentWillUnmount() {
+    this.props.actions.reset()
   }
 
   render() {

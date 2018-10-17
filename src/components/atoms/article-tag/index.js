@@ -34,7 +34,7 @@ const Text = styled.p`
 
   @media ${media.small} {
     ${TOPPANBUNKYU}
-    font-size: ${props => props.fontSize || (props.header ? '0.9em' : '0.6em')}
+    font-size: ${props => props.fontSize || (props.header ? '1em' : '0.6em')}
     font-weight: 600;
   }
 `

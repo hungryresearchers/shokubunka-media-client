@@ -14,7 +14,7 @@ injectGlobal`${fontFace}`
 export const FONT_FAMILY = {
   ZOUSAN: `font-family: 'zousan';`,
   YUGOTHIC: `font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";`,
-  TOPPANBUNKYU: `font-family: "Toppan Bunkyu Midashi Gothic";`,
+  TOPPANBUNKYU: `font-family: "Toppan Bunkyu Midashi Gothic", Avenir;`,
   OBLIQUE: `font-family: oblique;`,
   AVENIR: 'font-family: Avenir;'
 }

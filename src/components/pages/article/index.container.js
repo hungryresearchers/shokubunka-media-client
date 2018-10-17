@@ -6,6 +6,7 @@ import {
   initialize,
   handleClickInfo,
   handleClickModalCloseButton,
+  reset,
 } from '../../../modules/article'
 
 const mapStateToProps = ({ article }) => {
@@ -24,6 +25,9 @@ const mapDispatchToProps = (dispatch: Function) => ({
     },
     handleClickModalCloseButton() {
       dispatch(handleClickModalCloseButton())
+    },
+    reset() {
+      dispatch(reset())
     }
   },
 })

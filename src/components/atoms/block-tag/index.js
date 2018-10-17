@@ -6,7 +6,7 @@ import { FONT_FAMILY } from '../../styles/font-family.css'
 import { media } from '../../../utils/styles'
 
 const { GRAY, WHITE } = COLORS
-const { TOPPANBUNKYU, AVENIR } = FONT_FAMILY
+const { TOPPANBUNKYU } = FONT_FAMILY
 
 type Props = {|
   +text: string,
@@ -39,7 +39,7 @@ const Text = styled.p`
   margin: 0;
   padding: 0;
   @media ${media.small} {
-    font-size: 0.81em;
+    font-size: 0.95em;
     font-weight: 800;
   }
 `

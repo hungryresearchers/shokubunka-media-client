@@ -1,9 +1,6 @@
 // @flow
 import { endpoints, successResponse, failureResponse } from '../middlewares/callApi'
 
-import THUMBNAIL from '../components/images/mock/sarada.jpg'
-import WRITER_IMG from '../components/images/mock/yoshi.jpg'
-
 export const INITIALIZED = 'home/initialize'
 export const REQUEST_INITIALIZED = 'home/initialze_request'
 export const SUCCESS_INIALIZE = 'home/initialize_success'
@@ -21,31 +18,23 @@ export type HomeAction =
   | $ReturnType <typeof failureResponse>
 
 export const articleProps = () => ({
-  title: '絶品ハンバーグを食べに行ったら天国だった話',
-  id: `${Math.floor(Math.random() * 100 % 50)}`,
-  tags: [
-    'ハンバーグ',
-    '洋食',
-  ],
-  releasedDate: new Date(),
-  isNew: Math.floor(Math.random() * 100) % 2 || false,
-  // isNew: true,
-  writerName: 'Yoshi Kazuya',
-  imgUrl: WRITER_IMG,
-  thumbUrl: THUMBNAIL,
+  title: '',
+  id: '',
+  tags: [],
+  releasedDate: '',
+  isNew: false,
+  writerName: '',
+  imgUrl: null,
+  thumbUrl: null,
 })
 
-const articlesProps = [
-  // articleProps(),
-  // articleProps(),
-  // articleProps(),
-  // articleProps(),
-  // articleProps(),
-]
+const articlesProps = []
 
 const initialState = {
   articles: articlesProps
 }
+
+export type HomeState = {}
 
 function whenSuccessInitialize(state: HomeState, response: Array<any>) {
   const today = new Date()
@@ -62,8 +51,6 @@ function whenSuccessInitialize(state: HomeState, response: Array<any>) {
   return { ...state, articles }
   // return state
 }
-
-export type HomeState = {}
 
 export const reducer = (state: HomeState = initialState, action: HomeAction) => {
   switch (action.type) {

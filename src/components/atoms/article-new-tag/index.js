@@ -5,7 +5,7 @@ import { FONT_FAMILY } from '../../styles/font-family.css'
 import { COLORS } from '../../styles/colors'
 import { media } from '../../../utils/styles'
 
-const { OBLIQUE, AVENIR } = FONT_FAMILY
+const { AVENIR } = FONT_FAMILY
 const { ORANGE } = COLORS
 
 export const ArticleNewTag = () => (
@@ -24,7 +24,7 @@ const Container = styled.div`
   padding-left: 3em;
 
   @media ${media.small} {
-    padding: 0.5em 2.1em;
+    padding: 0.4em 2em;
     padding-left: 3.7em;
   }
 `

@@ -4,10 +4,8 @@ import styled from 'styled-components'
 import { ArticleUpper } from '../article-upper'
 import {
   type Tags,
-  ArticleMiddle
 } from '../article-middle'
 import {
-  type Tag,
   ArticleTag,
 } from '../../atoms/article-tag'
 import { Link } from 'react-router-dom'

@@ -20,10 +20,6 @@ type Props = {|
 |}
 
 export default class HomePage extends PureComponent<Props, void> {
-  constructor(props : Props) {
-    super()
-  }
-
   componentDidMount() {
     this.props.actions.initialize()
   }

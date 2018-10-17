@@ -1,7 +1,4 @@
 // @flow
-import WRITER_IMG from '../components/images/mock/yoshi.jpg'
-import TOP_IMG from '../components/images/mock/sarada.jpg'
-import { articleProps, SUCCESS_INIALIZE } from './home'
 import { endpoints } from '../middlewares/callApi'
 const { ARTICLE_INITIALIZE } = endpoints
 
@@ -9,6 +6,7 @@ export const INITIALIZE = 'article/initialize'
 export const INITIALIZE_SUCCESS = 'article/initialize_success'
 export const OPENED_SHOP_INFO_MODAL = 'article/opened_shop_info_modal'
 export const CLOSED_SHOP_INFO_MODAL = 'article/close_shop_info_modal'
+export const RESET = 'article/reset'
 
 export function initialize(id: number) {
   return {
@@ -29,78 +27,60 @@ export function handleClickModalCloseButton() {
   }
 }
 
+export function reset() {
+  return {
+    type: RESET
+  }
+}
+
 export type ArticleAction =
   | $ReturnType <typeof initialize>
 
-export type ArticleState = {}
-
-// const initialState = {
-//   writer: {
-//     name: 'Yoshi Kazuya',
-//     imgUrl: WRITER_IMG,
-//   },
-//   tags: [
-//     'うまい',
-//     'ハンバーグ'
-//   ],
-//   articleTitle: '絶品ハンバーグを食べに行ったら天国な話',
-//   topImgUrl: TOP_IMG,
-//   releasedDate: new Date(2018, 2, 10),
-//   articleContents: `<p>業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' /><p><br/>業務スーパーの冷凍食品で『 デミハンバーグ』 という商品はご存知でしょうか。 定番おかずのハンバーグは業務スーパーでも種類豊富ですが、 その中でも本品は1個当たり約57 .2 円という格安ぶり！　 ソース付きハンバーグとしては最安クラスに入る一品ではないかと。 正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' />`,
-//   relatedArticles: [
-//     articleProps(),
-//     articleProps(),
-//     articleProps(),
-//   ],
-//   phoneNumber: '123456789',
-//   businessHour: {
-//     open: '11:00',
-//     close: '23:00',
-//     holiday: '木',
-//   },
-//   requiredTime: '15',
-//   address: {
-//     postalCode: '〒123-1233',
-//     address: '家',
-//     latlng: {
-//       lat: 35.7717705,
-//       lng: 139.8634296,
-//     }
-//   },
-//   isOpenShopInfoModal: false,
-// }
+export type ArticleState = {
+  writer: {
+    name: string,
+    imgUrl: ?string,
+  },
+  tags: string[],
+  articleTitle: string,
+  topImgUrl: ?string,
+  releasedDate: string,
+  articleContents: string,
+  relatedArticles: string[],
+  phoneNumber: string,
+  businessHour: ?{
+    open: string,
+    close: string,
+    holiday: string,
+  },
+  requiredTime: string,
+  address: ?{
+    postalCode: string,
+    address: string,
+    latlng: {
+      lat: ?string,
+      lng: ?string
+    }
+  },
+  isOpenShopInfoModal: boolean,
+}
 
 const initialState = {
   writer: {
-    // name: 'Yoshi Kazuya',
-    // imgUrl: WRITER_IMG,
+    name: '',
+    imgUrl: null,
   },
-  tags: [
-    // 'うまい',
-    // 'ハンバーグ'
-  ],
+  tags: [],
   articleTitle: '',
-  // '絶品ハンバーグを食べに行ったら天国な話',
-  topImgUrl: '',
-  // TOP_IMG,
-  releasedDate: null,
-  // '2018 02.10',
+  topImgUrl: null,
+  releasedDate: '',
   articleContents: '',
-  // `<p>業務スーパーの冷凍食品で『デミハンバーグ』という商品はご存知でしょうか。定番おかずのハンバーグは業務スーパーでも種類豊富ですが、その中でも本品は1個当たり約57.2円という格安ぶり！ソース付きハンバーグとしては最安クラスに入る一品ではないかと。正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' /><p><br/>業務スーパーの冷凍食品で『 デミハンバーグ』 という商品はご存知でしょうか。 定番おかずのハンバーグは業務スーパーでも種類豊富ですが、 その中でも本品は1個当たり約57 .2 円という格安ぶり！　 ソース付きハンバーグとしては最安クラスに入る一品ではないかと。 正直お値段なりのクオリティではありますが、 毎日のお弁当用にはかなり便利かと思います！</p><br/><img src='${TOP_IMG}' />`,
-  relatedArticles: [
-    articleProps(),
-    articleProps(),
-    articleProps(),
-  ],
+  relatedArticles: [],
   phoneNumber: '',
-  // '123456789',
   businessHour: {
     open: '',
-    // '11:00',
     close: '',
-    // '23:00',
     holiday: '',
-    // '木',
   },
   requiredTime: '',
   address: {
@@ -108,9 +88,7 @@ const initialState = {
     address: '',
     latlng: {
       lat: null,
-      // 35.7717705,
       lng: null
-      // 139.8634296,
     }
   },
   isOpenShopInfoModal: false,
@@ -179,6 +157,9 @@ export const reducer = (state: ArticleState = initialState, action: ArticleActio
     }
     case CLOSED_SHOP_INFO_MODAL: {
       return { ...state, isOpenShopInfoModal: false }
+    }
+    case RESET: {
+      return initialState
     }
     default: {
       return state

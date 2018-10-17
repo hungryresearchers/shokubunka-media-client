@@ -1,6 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 import { Header } from '../../organisms/header'
 import { DetailTop } from '../../morecules/detail-top'
 import { ArticleContents } from '../../atoms/article-contents'
@@ -11,6 +12,7 @@ import { ShopInfoArea } from '../../organisms/shop-info-area'
 import { Link } from 'react-router-dom'
 import { ShopDetailModal } from '../../organisms/shop-detail-modal'
 import { media } from '../../../utils/styles'
+import { headerTitle } from '../../../utils/headerTitle'
 
 type Props = {|
   +actions: Object,
@@ -34,6 +36,7 @@ export default class Article extends PureComponent<Props, void> {
       phoneNumber, businessHour, requiredTime, address, isOpenShopInfoModal } = article
     return (
       <Container>
+        <Helmet title={headerTitle(articleTitle)} />
         <ShopDetailModal
           phoneNumber={phoneNumber}
           businessHour={businessHour}

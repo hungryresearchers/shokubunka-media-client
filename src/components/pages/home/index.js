@@ -1,6 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 import { Header } from '../../organisms/header'
 import { HeaderTitle } from '../../atoms/header-title'
 import {
@@ -9,6 +10,7 @@ import {
 } from '../../organisms/articles-area'
 import { COLORS } from '../../styles/colors'
 import { media } from '../../../utils/styles'
+import { headerTitle } from '../../../utils/headerTitle'
 
 const { MILK } = COLORS
 
@@ -28,6 +30,7 @@ export default class HomePage extends PureComponent<Props, void> {
     const { articles } = this.props.home
     return (
       <Container className='container-fluid' >
+        <Helmet title={headerTitle('Home')} />
         <Header />
         <HeaderTitle />
         <ContentsContainer>

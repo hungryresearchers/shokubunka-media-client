@@ -30,27 +30,33 @@ const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
   </GoogleMap>
 ))
 
-export const Map = ({ latlng, size, mobileSize }: Props) => (
-  <MapContent
-    googleMapURL={process.env.REACT_APP_GOOGLE_MAP_URL}
-    loadingElement={
-      <MapElement
-        size={size}
-        mobileSize={mobileSize}
-      />
-    }
-    containerElement = {
-      <MapElement
-        size={size}
-        mobileSize={mobileSize}
-      />
-    }
-    mapElement={
-      <div style={{height: '100%'}} />
-    }
-    latlng={latlng}
-  />
-)
+export const Map = ({ latlng, size, mobileSize }: Props) => {
+  if (!latlng || !latlng.lat || !latlng.lng) {
+    return <div style={{ height: '100%' }} />
+  }
+
+  return (
+    <MapContent
+      googleMapURL={process.env.REACT_APP_GOOGLE_MAP_URL}
+      loadingElement={
+        <MapElement
+          size={size}
+          mobileSize={mobileSize}
+        />
+      }
+      containerElement = {
+        <MapElement
+          size={size}
+          mobileSize={mobileSize}
+        />
+      }
+      mapElement={
+        <div style={{height: '100%'}} />
+      }
+      latlng={latlng}
+    />
+  )
+}
 
 const MapElement = styled.div`
   height: ${props => props.size || '300px'};

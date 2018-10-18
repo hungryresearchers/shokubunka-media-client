@@ -88,7 +88,7 @@ const initialState = {
     address: '',
     latlng: {
       lat: null,
-      lng: null
+      lng: null,
     }
   },
   isOpenShopInfoModal: false,
@@ -136,8 +136,8 @@ function whenSuccessInitialize(state: ArticleState, response: Object) {
       postalCode,
       address,
       latlng: {
-        lat: parseInt(lat, 10),
-        lng: parseInt(lng, 10)
+        lat: Number(lat),
+        lng: Number(lng)
       }
     }
   }

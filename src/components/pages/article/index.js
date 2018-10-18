@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom'
 import { ShopDetailModal } from '../../organisms/shop-detail-modal'
 import { media } from '../../../utils/styles'
 import { headerTitle } from '../../../utils/headerTitle'
+import TrackVisibility from 'react-on-screen'
 
 type Props = {|
   +actions: Object,
@@ -24,23 +25,10 @@ export default class Article extends PureComponent<Props, void> {
   componentDidMount() {
     const { id } = this.props.match.params
     this.props.actions.initialize(parseInt(id, 10))
-    window.addEventListener('scroll', this.onScroll, true)
   }
 
   componentWillUnmount() {
     this.props.actions.reset()
-    window.removeEventListener('scroll')
-  }
-
-  onScroll = (event) => {
-    console.log(this.scrollTop())
-  }
-
-  scrollTop() {
-    return Math.max(
-      window.pageYOffset,
-      (document.documentElement && document.documentElement.scrollTop) || 0,
-      (document.body && document.body.scrollTop) || 0)
   }
 
   render() {
@@ -78,17 +66,19 @@ export default class Article extends PureComponent<Props, void> {
                 { articleContents }
               </ArticleContents>
             </ContentsContainer>
-            {
-              shopId != null && !isLoading &&
-              <ShopInfoContaier>
-                <ShopInfoArea
-                  phoneNumber={phoneNumber}
-                  businessHour={businessHour}
-                  requiredTime={requiredTime}
-                  address={address}
-                />
-              </ShopInfoContaier>
-            }
+            <TrackVisibility offset={250} once>
+              {
+                ({ isVisible }) => (shopId != null && !isLoading && isVisible) &&
+                <ShopInfoContaier>
+                  <ShopInfoArea
+                    phoneNumber={phoneNumber}
+                    businessHour={businessHour}
+                    requiredTime={requiredTime}
+                    address={address}
+                  />
+                </ShopInfoContaier>
+              }
+            </TrackVisibility>
             {
               relatedArticles.length > 0 &&
               <RelatedArticlesContainer>

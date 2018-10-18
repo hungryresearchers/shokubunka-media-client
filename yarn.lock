@@ -8830,6 +8830,15 @@ react-modal@^3.4.5:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-on-screen@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-on-screen/-/react-on-screen-2.0.4.tgz#afe2185a9eb4b9ec53cff961790b843ab1c25467"
+  integrity sha512-2iiIulBu83MiPug3y0EH0WR/h+xk2KGmR+UWn6zhcew0dXTU8mz7VDVL4UguGrtWCmxFL8FRA0/Mt8HHeLo23A==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.6.0"
+    shallowequal "^1.0.2"
+
 react-redux@^5.0.7:
   version "5.0.7"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
@@ -9695,7 +9704,7 @@ shallowequal@0.2.x, shallowequal@^0.2.2:
   dependencies:
     lodash.keys "^3.1.2"
 
-shallowequal@^1.0.1:
+shallowequal@^1.0.1, shallowequal@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==

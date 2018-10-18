@@ -12,25 +12,31 @@ type Props = {|
   |},
 |}
 
-export const ArticleWriter = ({ writerInfo }: Props) => (
-  <Container>
-    <HeaderContainer>
-      <TipsHeader
-        title='この記事を書いた人'
+export const ArticleWriter = ({ writerInfo }: Props) => {
+  if (!writerInfo || (writerInfo.name === '' && !writerInfo.imgUrl)) {
+    return <Container />
+  }
+
+  return (
+    <Container>
+      <HeaderContainer>
+        <TipsHeader
+          title='この記事を書いた人'
+        />
+      </HeaderContainer>
+      <WriterInfo
+        name={writerInfo.name}
+        imgUrl={writerInfo.imgUrl}
+        fontSize='1.1em'
+        imgSize='3.4vw'
+        mobileFontSize='1.59em'
+        mobileImgSize='55px'
+        between='20px'
+        mobileBetween='20px'
       />
-    </HeaderContainer>
-    <WriterInfo
-      name={writerInfo.name}
-      imgUrl={writerInfo.imgUrl}
-      fontSize='1.1em'
-      imgSize='3.4vw'
-      mobileFontSize='1.59em'
-      mobileImgSize='55px'
-      between='20px'
-      mobileBetween='20px'
-    />
-  </Container>
-)
+    </Container>
+  )
+}
 
 const HeaderContainer = styled.div`
 

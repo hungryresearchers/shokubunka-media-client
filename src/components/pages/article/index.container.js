@@ -9,9 +9,10 @@ import {
   reset,
 } from '../../../modules/article'
 
-const mapStateToProps = ({ article }) => {
+const mapStateToProps = ({ article, load }) => {
   return {
     article,
+    load
   }
 }
 

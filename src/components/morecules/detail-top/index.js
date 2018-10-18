@@ -16,14 +16,18 @@ type Props = {|
   +releasedDate: string,
   +imgUrl: string,
   +name: string,
+  renderShopInfo: boolean,
 |}
 
-export const DetailTop = ({ topImgUrl, handleClickInfo, tags, title, releasedDate, imgUrl, name }: Props) => (
+export const DetailTop = ({ topImgUrl, handleClickInfo, tags, title, releasedDate, imgUrl, name, renderShopInfo }: Props) => (
   <Container>
     <ImgContainer>
-      <ShopInfoLink
-        onClick={handleClickInfo}
-      />
+      {
+        renderShopInfo &&
+        <ShopInfoLink
+          onClick={handleClickInfo}
+        />
+      }
       {
         topImgUrl &&
         <TopImg

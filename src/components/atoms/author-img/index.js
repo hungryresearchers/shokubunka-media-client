@@ -9,14 +9,21 @@ type Props = {|
   mobileImgSize?: string
 |}
 
-export const AuthorImg = ({ imgUrl, imgSize, mobileImgSize }: Props) => (
-  <Img
-    className='rounded-circle'
-    imgUrl={imgUrl}
-    imgSize={imgSize}
-    mobileImgSize={mobileImgSize}
-  />
-)
+export const AuthorImg = ({ imgUrl, imgSize, mobileImgSize }: Props) => {
+  if (!imgUrl) {
+    return null
+  }
+
+  return (
+    <Img
+      className='rounded-circle'
+      imgUrl={imgUrl}
+      imgSize={imgSize}
+      mobileImgSize={mobileImgSize}
+    />
+  )
+}
+
 
 const Img = styled.img.attrs({
   src: props => props.imgUrl

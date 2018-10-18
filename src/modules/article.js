@@ -121,6 +121,7 @@ export type ArticleState = {
   releasedDate: string,
   articleContents: string,
   relatedArticles: string[],
+  shopId: ?string,
   phoneNumber: string,
   businessHour: ?{
     open: string,
@@ -150,6 +151,7 @@ const initialState = {
   releasedDate: '',
   articleContents: '',
   relatedArticles: [],
+  shopId: null,
   phoneNumber: '',
   businessHour: {
     open: '',

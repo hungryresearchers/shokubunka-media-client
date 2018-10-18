@@ -24,16 +24,29 @@ export default class Article extends PureComponent<Props, void> {
   componentDidMount() {
     const { id } = this.props.match.params
     this.props.actions.initialize(parseInt(id, 10))
+    window.addEventListener('scroll', this.onScroll, true)
   }
 
   componentWillUnmount() {
     this.props.actions.reset()
+    window.removeEventListener('scroll')
+  }
+
+  onScroll = (event) => {
+    console.log(this.scrollTop())
+  }
+
+  scrollTop() {
+    return Math.max(
+      window.pageYOffset,
+      (document.documentElement && document.documentElement.scrollTop) || 0,
+      (document.body && document.body.scrollTop) || 0)
   }
 
   render() {
-    const { article, actions } = this.props
+    const { article, actions, load: { isLoading } } = this.props
     const { writer, tags, articleTitle, topImgUrl, releasedDate, articleContents, relatedArticles,
-      phoneNumber, businessHour, requiredTime, address, isOpenShopInfoModal } = article
+      phoneNumber, businessHour, requiredTime, address, isOpenShopInfoModal, shopId } = article
     return (
       <Container>
         <Helmet title={headerTitle(articleTitle)} />
@@ -56,6 +69,7 @@ export default class Article extends PureComponent<Props, void> {
               title={articleTitle}
               topImgUrl={topImgUrl}
               releasedDate={releasedDate}
+              renderShopInfo={shopId != null}
             />
           </TopContainer>
           <LowerContainer>
@@ -64,14 +78,17 @@ export default class Article extends PureComponent<Props, void> {
                 { articleContents }
               </ArticleContents>
             </ContentsContainer>
-            <ShopInfoContaier>
-              <ShopInfoArea
-                phoneNumber={phoneNumber}
-                businessHour={businessHour}
-                requiredTime={requiredTime}
-                address={address}
-              />
-            </ShopInfoContaier>
+            {
+              shopId != null && !isLoading &&
+              <ShopInfoContaier>
+                <ShopInfoArea
+                  phoneNumber={phoneNumber}
+                  businessHour={businessHour}
+                  requiredTime={requiredTime}
+                  address={address}
+                />
+              </ShopInfoContaier>
+            }
             {
               relatedArticles.length > 0 &&
               <RelatedArticlesContainer>
@@ -85,12 +102,15 @@ export default class Article extends PureComponent<Props, void> {
                 writerInfo={writer}
               />
             </WriterContainer>
-            <CloseButtonContainer to='/'>
-              <RectangleButton
-                text='記事を閉じる'
-                onClick={() => {}}
-              />
-            </CloseButtonContainer>
+            {
+              !isLoading &&
+              <CloseButtonContainer to='/'>
+                <RectangleButton
+                  text='記事を閉じる'
+                  onClick={() => {}}
+                />
+              </CloseButtonContainer>
+            }
           </LowerContainer>
         </DetailContainer>
       </Container>

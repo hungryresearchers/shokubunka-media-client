@@ -17,17 +17,6 @@ export type HomeAction =
   | $ReturnType <typeof successResponse>
   | $ReturnType <typeof failureResponse>
 
-export const articleProps = () => ({
-  title: '',
-  id: '',
-  tags: [],
-  releasedDate: '',
-  isNew: false,
-  writerName: '',
-  imgUrl: null,
-  thumbUrl: null,
-})
-
 const articlesProps = []
 
 const initialState = {
@@ -38,18 +27,19 @@ export type HomeState = {}
 
 function whenSuccessInitialize(state: HomeState, response: Array<any>) {
   const today = new Date()
-  const articles = response.map(({ post: { title, tags, writer, thumbnail, id, releasedDate } }) => ({
+  const articles = response.map(({ post: { title, tags, writer, thumbnail, id, releasedDate, shopId, content } }) => ({
     title,
+    content,
     tags,
     id,
     releasedDate,
     thumbUrl: thumbnail,
     imgUrl: writer.imgUrl,
     writerName: writer.name,
-    isNew: new Date(releasedDate).getDate() - today.getDate() < 3
+    isNew: new Date(releasedDate).getDate() - today.getDate() < 3,
+    shopId: parseInt(shopId, 10),
   }))
   return { ...state, articles }
-  // return state
 }
 
 export const reducer = (state: HomeState = initialState, action: HomeAction) => {

@@ -9,7 +9,8 @@ export const API_ROOT = (process.env.NODE_ENV === 'development')
 
 export const endpoints = {
   HOME_INITIALIZE: '/wp-json/wp/v2/articles',
-  ARTICLE_INITIALIZE: (id: number) => `/wp-json/wp/v2/articles/${id}`,
+  GET_ARTICLE: (id: number) => `/wp-json/wp/v2/articles/${id}`,
+  GET_SHOP_INFO: (id: number) => `/wp-json/wp/v2/posts/${id}`,
 }
 
 function checkStatus({ status }: { status: number }) {
@@ -71,6 +72,7 @@ export const callApiMiddleware = (store: Store) => (next: Next) => async(action:
     dispatch(loadDone())
     const apiCallIsSucceed = checkStatus(response)
     const json = await response.json()
+    console.log(json)
     if (apiCallIsSucceed) {
       dispatch(successResponse(successActionType(ACTION_TYPE), json))
     }

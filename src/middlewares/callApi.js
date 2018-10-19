@@ -72,7 +72,6 @@ export const callApiMiddleware = (store: Store) => (next: Next) => async(action:
     dispatch(loadDone())
     const apiCallIsSucceed = checkStatus(response)
     const json = await response.json()
-    console.log(json)
     if (apiCallIsSucceed) {
       dispatch(successResponse(successActionType(ACTION_TYPE), json))
     }

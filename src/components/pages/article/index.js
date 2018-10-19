@@ -35,9 +35,21 @@ export default class Article extends PureComponent<Props, void> {
     const { article, actions, load: { isLoading } } = this.props
     const { writer, tags, articleTitle, topImgUrl, releasedDate, articleContents, relatedArticles,
       phoneNumber, businessHour, requiredTime, address, isOpenShopInfoModal, shopId } = article
+    const description = articleContents.toString().replace(/\r?\n/g, '').slice(0, 120) + '...'
     return (
       <Container>
-        <Helmet title={headerTitle(articleTitle)} />
+        <Helmet
+          title={headerTitle(articleTitle)}
+          meta={[
+            { name: 'description', content: description },
+            { property: 'og:title', content: articleTitle },
+            { property: 'og:type', content: 'blog' },
+            { property: 'og:image', content: topImgUrl },
+            { property: 'og:description', content: description },
+            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:site', content: '@hungryresearch' },
+          ]}
+        />
         <ShopDetailModal
           phoneNumber={phoneNumber}
           businessHour={businessHour}

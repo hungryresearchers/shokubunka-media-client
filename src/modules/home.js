@@ -36,7 +36,7 @@ function whenSuccessInitialize(state: HomeState, response: Array<any>) {
     thumbUrl: thumbnail,
     imgUrl: writer.imgUrl,
     writerName: writer.name,
-    isNew: new Date(releasedDate).getDate() - today.getDate() < 3,
+    isNew: today.getDate() - new Date(releasedDate).getDate() < 3,
     shopId: parseInt(shopId, 10),
   }))
   return { ...state, articles }

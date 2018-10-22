@@ -56,28 +56,35 @@ export const callApiMiddleware = (store: Store) => (next: Next) => async(action:
     dispatch(loadStart())
 
     // const { params } = action
-    const response = await fetch(
-      API_ROOT + endpoint,
-      {
-        method: 'GET',
-        // github apiをモックで叩くためにgetにしてるだけ
-        // method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;'
-        },
-        // body: JSON.stringify(params)
-      }
-    )
+    try {
+      const response = await fetch(
+        API_ROOT + endpoint,
+        {
+          method: 'GET',
+          // github apiをモックで叩くためにgetにしてるだけ
+          // method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;'
+          },
+          // body: JSON.stringify(params)
+        }
+      )
 
-    dispatch(loadDone())
-    const apiCallIsSucceed = checkStatus(response)
-    const json = await response.json()
-    if (apiCallIsSucceed) {
-      dispatch(successResponse(successActionType(ACTION_TYPE), json))
+      dispatch(loadDone())
+      const apiCallIsSucceed = checkStatus(response)
+      const json = await response.json()
+      if (apiCallIsSucceed) {
+        dispatch(successResponse(successActionType(ACTION_TYPE), json))
+      }
+      else {
+        dispatch(failureResponse(failureActionType(ACTION_TYPE), json))
+      }
     }
-    else {
-      dispatch(failureResponse(failureActionType(ACTION_TYPE), json))
+    catch (e) {
+      dispatch(loadDone())
+      dispatch(failureResponse(failureActionType(ACTION_TYPE), e))
     }
+
   }
   return ret
 }

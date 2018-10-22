@@ -14,12 +14,15 @@ import { ShopDetailModal } from '../../organisms/shop-detail-modal'
 import { media } from '../../../utils/styles'
 import { headerTitle } from '../../../utils/headerTitle'
 import TrackVisibility from 'react-on-screen'
+import CircleServiceIcon from '../../atoms/circle-service-icon'
 
 type Props = {|
   +actions: Object,
   match: any,
   article: Object,
 |}
+
+const LOADING_ICON_SIZE = 300
 
 export default class Article extends PureComponent<Props, void> {
   componentDidMount() {
@@ -63,68 +66,87 @@ export default class Article extends PureComponent<Props, void> {
           upperTitle='カ ナ マ チ'
           upperFontFamily='ZOUSAN'
         />
-        <DetailContainer>
-          <TopContainer>
-            <DetailTop
-              imgUrl={writer.imgUrl}
-              name={writer.name}
-              handleClickInfo={actions.handleClickInfo}
-              tags={tags}
-              title={articleTitle}
-              topImgUrl={topImgUrl}
-              releasedDate={releasedDate}
-              renderShopInfo={shopId != null}
-            />
-          </TopContainer>
-          <LowerContainer>
-            <ContentsContainer>
-              <ArticleContents>
-                { articleContents }
-              </ArticleContents>
-            </ContentsContainer>
-            <TrackVisibility offset={250} once>
-              {
-                ({ isVisible }) => (shopId != null && !isLoading && isVisible) &&
-                <ShopInfoContaier>
-                  <ShopInfoArea
-                    phoneNumber={phoneNumber}
-                    businessHour={businessHour}
-                    requiredTime={requiredTime}
-                    address={address}
+        {
+          articleTitle === '' && isLoading
+            ? (
+              <LoadingIconContiner>
+                <CircleServiceIcon
+                  size={LOADING_ICON_SIZE}
+                  sizeUnit='px'
+                />
+              </LoadingIconContiner>
+            )
+            : (
+              <DetailContainer>
+                <TopContainer>
+                  <DetailTop
+                    imgUrl={writer.imgUrl}
+                    name={writer.name}
+                    handleClickInfo={actions.handleClickInfo}
+                    tags={tags}
+                    title={articleTitle}
+                    topImgUrl={topImgUrl}
+                    releasedDate={releasedDate}
+                    renderShopInfo={shopId != null}
                   />
-                </ShopInfoContaier>
-              }
-            </TrackVisibility>
-            {
-              relatedArticles.length > 0 &&
-              <RelatedArticlesContainer>
-                <RelatedArticleArea
-                  articles={relatedArticles}
-                />
-              </RelatedArticlesContainer>
-            }
-            <WriterContainer>
-              <ArticleWriter
-                writerInfo={writer}
-              />
-            </WriterContainer>
-            {
-              !isLoading &&
-              <CloseButtonContainer to='/'>
-                <RectangleButton
-                  text='記事を閉じる'
-                  onClick={() => {}}
-                />
-              </CloseButtonContainer>
-            }
-          </LowerContainer>
-        </DetailContainer>
+                </TopContainer>
+                <LowerContainer>
+                  <ContentsContainer>
+                    <ArticleContents>
+                      { articleContents }
+                    </ArticleContents>
+                  </ContentsContainer>
+                  <TrackVisibility offset={250} once>
+                    {
+                      ({ isVisible }) => (shopId != null && !isLoading && isVisible) &&
+                      <ShopInfoContaier>
+                        <ShopInfoArea
+                          phoneNumber={phoneNumber}
+                          businessHour={businessHour}
+                          requiredTime={requiredTime}
+                          address={address}
+                        />
+                      </ShopInfoContaier>
+                    }
+                  </TrackVisibility>
+                  {
+                    relatedArticles.length > 0 &&
+                    <RelatedArticlesContainer>
+                      <RelatedArticleArea
+                        articles={relatedArticles}
+                      />
+                    </RelatedArticlesContainer>
+                  }
+                  <WriterContainer>
+                    <ArticleWriter
+                      writerInfo={writer}
+                    />
+                  </WriterContainer>
+                  {
+                    !isLoading &&
+                    <CloseButtonContainer to='/'>
+                      <RectangleButton
+                        text='記事を閉じる'
+                        onClick={() => {}}
+                      />
+                    </CloseButtonContainer>
+                  }
+                </LowerContainer>
+              </DetailContainer>
+            )
+        }
       </Container>
     )
   }
 }
 
 const Container = styled.div`
+`
+
+const LoadingIconContiner = styled.div`
+  position: absolute;
+  top: calc(100vh/2 - ${LOADING_ICON_SIZE / 2}px);
+  left: calc(100vw/2 - ${LOADING_ICON_SIZE / 2}px);
 `
 
 const DetailContainer = styled.div`

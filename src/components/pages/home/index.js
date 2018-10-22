@@ -11,6 +11,7 @@ import {
 import { COLORS } from '../../styles/colors'
 import { media } from '../../../utils/styles'
 import { headerTitle } from '../../../utils/headerTitle'
+import CircleServiceIcon from '../../atoms/circle-service-icon'
 
 const { MILK } = COLORS
 
@@ -27,7 +28,8 @@ export default class HomePage extends PureComponent<Props, void> {
   }
 
   render() {
-    const { articles } = this.props.home
+    const { home, load: { isLoading } } = this.props
+    const { articles } = home
     return (
       <Container className='container-fluid' >
         <Helmet title={headerTitle('Home')} />
@@ -36,6 +38,15 @@ export default class HomePage extends PureComponent<Props, void> {
           to='/'
         />
         <HeaderTitle />
+        {
+          (isLoading && articles.length < 1) &&
+          <LoadingIconContainer>
+            <CircleServiceIcon
+              size={250}
+              sizeUnit='px'
+            />
+          </LoadingIconContainer>
+        }
         <ContentsContainer>
           <ArticlesArea
             articles={articles}
@@ -50,6 +61,13 @@ const Container = styled.div`
   padding: 0;
   min-height: 100vh;
   background-color: ${MILK};
+`
+
+const LoadingIconContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
 `
 
 const ContentsContainer = styled.div`

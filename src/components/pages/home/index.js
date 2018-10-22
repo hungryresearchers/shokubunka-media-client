@@ -31,7 +31,10 @@ export default class HomePage extends PureComponent<Props, void> {
     return (
       <Container className='container-fluid' >
         <Helmet title={headerTitle('Home')} />
-        <Header />
+        <Header
+          // todo
+          to='/'
+        />
         <HeaderTitle />
         <ContentsContainer>
           <ArticlesArea

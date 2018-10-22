@@ -14,7 +14,7 @@ export type Props = {|
 |}
 
 export const HeaderNavText = ({ text, linkTo }: Props) => (
-  <Text to={`${linkTo}`} className='navbar-nav'>{text}</Text>
+  <Text to={linkTo} className='navbar-nav'>{text}</Text>
 )
 
 const Text = styled(Link)`

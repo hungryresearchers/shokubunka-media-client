@@ -58,7 +58,11 @@ export default class Article extends PureComponent<Props, void> {
           handleClickModalCloseButton={actions.handleClickModalCloseButton}
           isOpen={isOpenShopInfoModal}
         />
-        <Header />
+        <Header
+          to='/'
+          upperTitle='カ ナ マ チ'
+          upperFontFamily='ZOUSAN'
+        />
         <DetailContainer>
           <TopContainer>
             <DetailTop

@@ -18,3 +18,5 @@ export const FONT_FAMILY = {
   OBLIQUE: `font-family: oblique;`,
   AVENIR: 'font-family: Avenir;'
 }
+
+export type FontFamily = $Keys<typeof FONT_FAMILY>

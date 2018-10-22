@@ -24,7 +24,7 @@ export const RelatedArticleArea = ({ articles }: Props) => (
             title,
             id,
             releasedDate,
-            name,
+            writerName,
             imgUrl,
             thumbUrl,
           } = article
@@ -35,7 +35,7 @@ export const RelatedArticleArea = ({ articles }: Props) => (
               title={title}
               id={id}
               releasedDate={releasedDate}
-              name={name}
+              name={writerName}
               writerImgUrl={imgUrl}
               thumbUrl={thumbUrl}
               hasBorder={i !== (articles.length - 1)}

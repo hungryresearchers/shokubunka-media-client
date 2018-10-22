@@ -6,6 +6,7 @@ import {
   ArticleTag,
 } from '../../atoms/article-tag'
 import { ReleasedDate } from '../../atoms/released-date'
+import { media } from '../../../utils/styles'
 
 export type Tags = Tag[]
 type Props = {|
@@ -38,10 +39,15 @@ export const ArticleMiddle = ({ tags, releasedDate }: Props) => (
   </Container>
 )
 
-const Container = styled.div``
+const Container = styled.div`
+  padding-top: 4px;
+`
 
 const TagContainer = styled.div`
   padding-right: 1.1em;
+  @media ${media.small} {
+    padding-right: 0.7em;
+  }
 `
 
 const TagsContainer = styled.div``
@@ -49,4 +55,8 @@ const TagsContainer = styled.div``
 const ReleasedDateContainer = styled.div`
   padding-right: 0;
   text-aligh: right;
+
+  @media ${media.small} {
+    display: none;
+  }
 `

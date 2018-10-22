@@ -1,13 +1,8 @@
 // @flow
-import React from 'react'
+import React, { Fragment } from 'react'
 
-export const InfoIcon = () => (
-  <svg
-    width='6vw'
-    height='6vw'
-    viewBox='0 0 96 96'
-    xmlns='http://www.w3.org/2000/svg'
-    xmlnsXlink='http://www.w3.org/1999/xlink'>
+const IconIcon = () => (
+  <Fragment>
     <defs>
       <circle
         id='path-1'
@@ -38,5 +33,27 @@ export const InfoIcon = () => (
         </g>
       </g>
     </g>
+  </Fragment>
+)
+
+export const InfoIcon = () => (
+  <svg
+    width='6vw'
+    height='6vw'
+    viewBox='0 0 96 96'
+    xmlns='http://www.w3.org/2000/svg'
+    xmlnsXlink='http://www.w3.org/1999/xlink'>
+    <IconIcon />
+  </svg>
+)
+
+export const MobileInfoIcon = () => (
+  <svg
+    width='11.5vw'
+    height='11.5vw'
+    viewBox='0 0 96 96'
+    xmlns='http://www.w3.org/2000/svg'
+    xmlnsXlink='http://www.w3.org/1999/xlink'>
+    <IconIcon />
   </svg>
 )

@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { media } from '../../../utils/styles'
 
 const { WHITE, ORANGE } = COLORS
 const { YUGOTHIC } = FONT_FAMILY
@@ -42,4 +43,9 @@ const Text = styled.p`
   ${YUGOTHIC}
   color: ${props => props.color || WHITE};
   font-size: 1.3em;
+  font-weight: bold;
+
+  @media ${media.small} {
+    font-size: 1.2em;
+  }
 `

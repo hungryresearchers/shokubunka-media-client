@@ -4,5 +4,5 @@ import { COLORS } from '../../styles/colors'
 const { GRAY_PALE } = COLORS
 
 export const TwoStepBorder = styled.hr`
-  border-top: 0.15em solid ${GRAY_PALE};
+  border-top: 0.1em solid ${GRAY_PALE};
 `

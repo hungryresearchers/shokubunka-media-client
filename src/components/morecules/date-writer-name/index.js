@@ -8,9 +8,11 @@ type Props = {|
   +releasedDate: string,
   +name: string,
   +imgUrl: string,
+  mobileFontSize?: string,
+  mobileImgSize?: string
 |}
 
-export const DateWriterName = ({ releasedDate, name, imgUrl }: Props) => (
+export const DateWriterName = ({ releasedDate, name, imgUrl, mobileFontSize, mobileImgSize }: Props) => (
   <Container>
     <ReleasedDate
       releasedDate={releasedDate}
@@ -21,6 +23,8 @@ export const DateWriterName = ({ releasedDate, name, imgUrl }: Props) => (
       imgUrl={imgUrl}
       fontSize='1.1em'
       imgSize='1.8vw'
+      mobileFontSize={mobileFontSize || '0.8em'}
+      mobileImgSize={mobileImgSize || '1.3em'}
     />
   </Container>
 )

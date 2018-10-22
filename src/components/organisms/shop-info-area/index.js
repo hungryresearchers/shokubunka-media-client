@@ -14,26 +14,23 @@ import { WalkmanIcon } from '../../atoms/walkman-icon'
 import { RequiredTime } from '../../atoms/required-time'
 import {
   AddressText,
-  type Props as Address,
+  type Address,
 } from '../../atoms/address-text'
 import {
   Map,
-  type LatLng,
 } from '../../atoms/map'
+import { media } from '../../../utils/styles'
 
 export type Props = {|
   phoneNumber: string,
   businessHour: BusinessHour,
   requiredTime: string,
-  address: {
-    ...Address,
-    latlng: LatLng
-  },
+  address: Address,
 |}
 
 export const SHOP_INFO_MAP_SIZE = '300px'
 
-export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address, latlng }: Props) => (
+export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address }: Props) => (
   <Container>
     <TipsHeaderContainer>
       <TipsHeader
@@ -74,14 +71,13 @@ export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address,
           IconComponent={() => (null)}
           DescriptionComponent={() => (
             <AddressText
-              address={address.address}
-              postalCode={address.postalCode}
+              address={address}
             />
           )}
         />
       </AddressContainer>
       {
-        address.latlng &&
+        (address.latlng && address.latlng.lat && address.latlng.lng) &&
         <MapContainer>
           <ShopInfoColumn
             IconComponent={() => (null)}
@@ -89,6 +85,7 @@ export const ShopInfoArea = ({ phoneNumber, businessHour, requiredTime, address,
               <Map
                 latlng={address.latlng}
                 size="300px"
+                mobileSize='250px'
               />
             )}
           />
@@ -102,7 +99,11 @@ const Container = styled.div`
   width: 100%;
 `
 
-const TipsHeaderContainer = styled.div``
+const TipsHeaderContainer = styled.div`
+  @media ${media.small} {
+    margin-bottom: 25px;
+  }
+`
 
 const AddressContainer = styled.div`
   margin-bottom: 2vh;

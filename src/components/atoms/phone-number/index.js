@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { media } from '../../../utils/styles'
 
 const { GRAY } = COLORS
 const { AVENIR } = FONT_FAMILY
@@ -23,4 +24,8 @@ const Text = styled.p`
   ${AVENIR};
   color: ${GRAY};
   font-size: 1.1em;
+
+  @media ${media.small} {
+    font-size: 0.95em;
+  }
 `

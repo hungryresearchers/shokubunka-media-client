@@ -3,11 +3,14 @@ import 'whatwg-fetch'
 import type { Store } from 'redux'
 import { loadStart, loadDone } from '../modules/load'
 
-export const API_ROOT = (process.env.NODE_ENV === 'development') ? '' : ''
+export const API_ROOT = (process.env.NODE_ENV === 'development')
+  ? process.env.REACT_APP_DEV_API_ROOT
+  : process.env.REACT_APP_PROD_API_ROOT
 
 export const endpoints = {
-  HOME_INITIALIZE: 'https://api.github.com/users/yasuno0327',
-  ARTICLE_INITIALIZE: 'article_initialize'
+  HOME_INITIALIZE: '/wp-json/wp/v2/articles',
+  GET_ARTICLE: (id: number) => `/wp-json/wp/v2/articles/${id}`,
+  GET_SHOP_INFO: (id: number) => `/wp-json/wp/v2/posts/${id}`,
 }
 
 function checkStatus({ status }: { status: number }) {
@@ -18,63 +21,70 @@ function requestResponse(type: string) {
   return { type }
 }
 
-function successResponse(type: string, response: Object) {
+export function successResponse(type: string, response: Object) {
   return {
     type,
     response,
   }
 }
 
-function failureResponse(type: string, error: ?Object) {
+export function failureResponse(type: string, error: ?Object) {
   return {
     type,
     error,
   }
 }
 
-const requestActionType = (type: string) => `${type}_REQUEST`
+const requestActionType = (type: string) => `${type}_request`
 
-const successActionType = (type: string) => `${type}_SUCCESS`
+const successActionType = (type: string) => `${type}_success`
 
-const failureActionType = (type: string) => `${type}_FAILURE`
+const failureActionType = (type: string) => `${type}_failure`
 
 type Next = (action: Function) => void
 
 // $FlowFixMe (storeがany型なのを治す)
-export const callApiMiddleware = (store: any) => (next: Next) => async(action: any) => {
+export const callApiMiddleware = (store: Store) => (next: Next) => async(action: any) => {
   const ret = next(action)
 
   const { endpoint } = action
-  if (endpoint != null && typeof endpoint === 'string') {
+  if (endpoint != null) {
     const dispatch = store.dispatch.bind(store)
     const ACTION_TYPE = action.type
 
     dispatch(requestResponse(requestActionType(ACTION_TYPE)))
     dispatch(loadStart())
 
-    const { params } = action
-    const response = await fetch(
-      API_ROOT + endpoint,
-      {
-        method: 'GET',
-        // github apiをモックで叩くためにgetにしてるだけ
-        // method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(params)
-      }
-    )
+    // const { params } = action
+    try {
+      const response = await fetch(
+        API_ROOT + endpoint,
+        {
+          method: 'GET',
+          // github apiをモックで叩くためにgetにしてるだけ
+          // method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;'
+          },
+          // body: JSON.stringify(params)
+        }
+      )
 
-    dispatch(loadDone())
-    const apiCallIsSucceed = checkStatus(response)
-    const json = await response.json()
-    if (apiCallIsSucceed) {
-      dispatch(successResponse(successActionType(ACTION_TYPE), json))
+      dispatch(loadDone())
+      const apiCallIsSucceed = checkStatus(response)
+      const json = await response.json()
+      if (apiCallIsSucceed) {
+        dispatch(successResponse(successActionType(ACTION_TYPE), json))
+      }
+      else {
+        dispatch(failureResponse(failureActionType(ACTION_TYPE), json))
+      }
     }
-    else {
-      dispatch(failureResponse(failureActionType(ACTION_TYPE), json))
+    catch (e) {
+      dispatch(loadDone())
+      dispatch(failureResponse(failureActionType(ACTION_TYPE), e))
     }
+
   }
   return ret
 }

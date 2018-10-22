@@ -7,6 +7,7 @@ import {
   GoogleMap,
   Marker
 } from 'react-google-maps'
+import { media } from '../../../utils/styles'
 
 export type LatLng = {
   lat: number,
@@ -15,6 +16,7 @@ export type LatLng = {
 type Props = {
   latlng: LatLng,
   size?: string,
+  mobileSize?: string,
 }
 
 const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
@@ -28,27 +30,42 @@ const MapContent = withScriptjs(withGoogleMap(({ latlng }: Props) =>
   </GoogleMap>
 ))
 
-export const Map = ({ latlng, size }: Props) => (
-  <MapContent
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGpVNiSjM-eqFHYEGtoV2yf9uGJWOVpT4&v=3.exp&libraries=geometry,drawing,places"
-    loadingElement={
-      <MapElement
-        size={size}
-      />
-    }
-    containerElement = {
-      <MapElement
-        size={size}
-      />
-    }
-    mapElement={
-      <div style={{height: '100%'}} />
-    }
-    latlng={latlng}
-  />
-)
+export const Map = ({ latlng, size, mobileSize }: Props) => {
+  if (!latlng || !latlng.lat || !latlng.lng) {
+    return <div style={{ height: '100%' }} />
+  }
+
+  return (
+    <MapContent
+      googleMapURL={process.env.REACT_APP_GOOGLE_MAP_URL}
+      loadingElement={
+        <MapElement
+          size={size}
+          mobileSize={mobileSize}
+        />
+      }
+      containerElement = {
+        <MapElement
+          size={size}
+          mobileSize={mobileSize}
+        />
+      }
+      mapElement={
+        <div style={{height: '100%'}} />
+      }
+      latlng={latlng}
+    />
+  )
+}
 
 const MapElement = styled.div`
   height: ${props => props.size || '300px'};
   width: ${props => props.size || '300px'};
+
+  ${props => props.mobileSize && `
+    @media ${media.small} {
+      height: ${props.mobileSize};
+      width: ${props.mobileSize};
+    }
+  `}
 `

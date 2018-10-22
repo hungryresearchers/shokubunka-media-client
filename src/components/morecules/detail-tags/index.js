@@ -25,7 +25,7 @@ export const DetailTags = ({ tags }: Props) => (
 )
 
 const TagContainer = styled.div`
-  padding-right: 1em;
+  padding-right: 0.6em;
 `
 
 const Container = styled.div``

@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILY } from '../../styles/font-family.css'
+import { media } from '../../../utils/styles'
 
 const { GRAY } = COLORS
 const { AVENIR } = FONT_FAMILY
@@ -44,6 +45,10 @@ const Container = styled.p`
   font-size: 1.1em;
   ${AVENIR};
   color: ${GRAY};
+
+  @media ${media.small} {
+    font-size: 0.95em;
+  }
 `
 
 const BusinessHours = styled.span`

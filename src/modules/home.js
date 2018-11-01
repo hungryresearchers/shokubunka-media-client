@@ -27,18 +27,20 @@ export type HomeState = {}
 
 function whenSuccessInitialize(state: HomeState, response: Array<any>) {
   const today = new Date()
-  const articles = response.map(({ post: { title, tags, writer, thumbnail, id, releasedDate, shopId, content } }) => ({
-    title,
-    content,
-    tags,
-    id,
-    releasedDate,
-    thumbUrl: thumbnail,
-    imgUrl: writer.imgUrl,
-    writerName: writer.name,
-    isNew: today.getDate() - new Date(releasedDate).getDate() < 3,
-    shopId: parseInt(shopId, 10),
-  }))
+  const articles = response
+    .filter(({ post: { releasedDate } }) => today >= new Date(releasedDate))
+    .map(({ post: { title, tags, writer, thumbnail, id, releasedDate, shopId, content } }) => ({
+      title,
+      content,
+      tags,
+      id,
+      releasedDate,
+      thumbUrl: thumbnail,
+      imgUrl: writer.imgUrl,
+      writerName: writer.name,
+      isNew: today.getDate() - new Date(releasedDate).getDate() < 3,
+      shopId: parseInt(shopId, 10),
+    }))
   return { ...state, articles }
 }
 
